@@ -4,23 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-
-        <!--=============== REMIXICONS ===============-->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
             crossorigin=""
         />
-
-        <!--=============== CSS ===============-->
         <link rel="stylesheet" href="styles.css" />
-
         <title>Portfolio</title>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+            defer
+        ></script>
+        <script src="scrollreveal.min.js" defer></script>
+        <script type="module" src="script.js" defer></script>
     </head>
     <body>
-        <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <div class="nav container">
                 <a href="#" class="nav-logo">
@@ -68,10 +66,7 @@
                 </div>
             </div>
         </header>
-
-        <!--==================== MAIN ====================-->
         <main class="main">
-            <!--==================== HOME ====================-->
             <section class="home section" id="home"></section>
             <div class="home-container container grid">
                 <h1 class="home-name">Rian Lot</h1>
@@ -140,7 +135,6 @@
                     </a>
                 </div>
             </div>
-            <!--==================== ABOUT ====================-->
             <section class="about section" id="about">
                 <div class="about-container container grid">
                     <h2 class="section-title-1">
@@ -195,9 +189,7 @@
                     </div>
                 </div>
             </section>
-
-            <!--==================== SERVICES ====================-->
-            <section class="services section">
+            <section class="services section" id="services">
                 <h2 class="section-title-2">
                     <span>Services.</span>
                 </h2>
@@ -260,7 +252,6 @@
                 </div>
             </section>
 
-            <!--==================== PROJECTS ====================-->
             <section class="projects section" id="projects">
                 <h2 class="section-title-1">
                     <span>Projects.</span>
@@ -486,7 +477,6 @@
                 </div>
             </section>
 
-            <!--==================== CONTACT ====================-->
             <section class="contact section" id="contact">
                 <div class="contact-container grid">
                     <div class="contact-data">
@@ -626,7 +616,6 @@
             </section>
         </main>
 
-        <!--==================== FOOTER ====================-->
         <footer class="footer">
             <div class="footer-container container grid">
                 <ul class="footer-links">
@@ -650,16 +639,8 @@
             </div>
         </footer>
 
-        <!--========== SCROLL UP ==========-->
         <a href="#" class="scroll-up">
             <i class="ri-arrow-up-s-line"></i>
         </a>
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="js/scrollreveal.min.js"></script>
-
-        <!--=============== EMAIL JS ===============-->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <!--=============== MAIN JS ===============-->
-        <script src="js/main.js"></script>
     </body>
 </html>

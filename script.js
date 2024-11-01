@@ -1,4 +1,3 @@
-/*=============== SHOW MENU ===============*/
 const navMenu = document.querySelector(".nav-menu"),
     navToggle = document.querySelector(".nav-toggle"),
     navClose = document.querySelector(".nav-close");
@@ -13,7 +12,7 @@ if (navClose) {
         navMenu.classList.remove("show-menu");
     });
 }
-/*=============== REMOVE MENU MOBILE ===============*/
+
 const navLink = document.querySelectorAll(".nav-link");
 
 const linkAction = () => {
@@ -21,7 +20,7 @@ const linkAction = () => {
     navMenu.classList.remove("show-menu");
 };
 navLink.forEach((link) => link.addEventListener("click", linkAction));
-/*=============== SHADOW HEADER ===============*/
+
 const shadowHeader = () => {
     const header = document.getElementById("header");
     window.scrollY >= 50
@@ -29,7 +28,7 @@ const shadowHeader = () => {
         : header.classList.remove("shadow-header");
 };
 window.addEventListener("scroll", shadowHeader);
-/*=============== EMAIL JS ===============*/
+
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.querySelector(".contact-message");
 
@@ -63,16 +62,15 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener("submit", sendEmail);
 
-/*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
     const scrollUp = document.querySelector(".scroll-up");
-    this.scrollY >= 350
+    window.scrollY >= 350
         ? scrollUp.classList.add("show-scroll")
         : scrollUp.classList.remove("show-scroll");
 };
 
 window.addEventListener("scroll", scrollUp);
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+
 const sections = document.querySelectorAll("section[id]");
 
 const scrollActive = () => {
@@ -96,7 +94,7 @@ const scrollActive = () => {
         }
     });
 };
-/*=============== DARK LIGHT THEME ===============*/
+
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "ri-sun-line";
@@ -125,7 +123,7 @@ themeButton.addEventListener("click", () => {
     localStorage.setItem("selected-theme", getCurrentTheme());
     localStorage.setItem("selected-icon", getCurrentIcon());
 });
-/*=============== SCROLL REVEAL ANIMATION ===============*/
+
 const sr = ScrollReveal({
     origin: "top",
     distance: "60px",
