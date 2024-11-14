@@ -30,34 +30,24 @@ const shadowHeader = () => {
 window.addEventListener("scroll", shadowHeader);
 
 const contactForm = document.getElementById("contact-form");
-const contactMessage = document.querySelector(".contact-message");
 
 const sendEmail = (e) => {
     e.preventDefault();
 
-    // serviceId, templateId, #form, publicKey
     emailjs
         .sendForm(
-            "service_d9lzyps",
-            "template_dqcrvtw",
-            "#contact-form",
-            "6DdhfNV_WGxG9gxiH"
+            "service_d9lzyps", // serviceId
+            "template_dqcrvtw", // templateId
+            "#contact-form", // formId
+            "6DdhfNV_WGxG9gxiH" // publicKey
         )
-        .then(
-            () => {
-                contactMessage.textContent = " Message sent successfully ✅";
-
-                setTimeout(() => {
-                    contactMessage.textContent = "";
-                }, 5000);
-
-                contactForm.reset();
-            },
-            () => {
-                contactMessage.textContent =
-                    "  Message not sent (service error) ❌";
-            }
-        );
+        .then(() => {
+            alert("✅ Message sent successfully");
+        })
+        .catch(() => {
+            alert("❌ Message not sent (service error)");
+        })
+        .finally(() => contactForm.reset());
 };
 
 contactForm.addEventListener("submit", sendEmail);
@@ -94,35 +84,6 @@ const scrollActive = () => {
         }
     });
 };
-
-const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "ri-sun-line";
-
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-const getCurrentTheme = () =>
-    document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-    themeButton.classList.contains(iconTheme) ? "ri-sun-line" : "ri-moon-line";
-
-if (selectedTheme) {
-    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-        darkTheme
-    );
-    themeButton.classList[selectedIcon === "ri-sun-line" ? "add" : "remove"](
-        iconTheme
-    );
-}
-
-themeButton.addEventListener("click", () => {
-    document.body.classList.toggle(darkTheme);
-    themeButton.classList.toggle(iconTheme);
-
-    localStorage.setItem("selected-theme", getCurrentTheme());
-    localStorage.setItem("selected-icon", getCurrentIcon());
-});
 
 const sr = ScrollReveal({
     origin: "top",
