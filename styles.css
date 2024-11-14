@@ -830,6 +830,7 @@ img {
     display: flex;
     justify-content: center;
     column-gap: 2rem;
+    margin-right: 50px;
 }
 
 .footer-link {
@@ -1193,6 +1194,6 @@ img {
         order: 1;
     }
     .scroll-up {
-        right: 3rem;
+        right: 2rem;
     }
 }

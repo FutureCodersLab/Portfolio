@@ -67,13 +67,12 @@ const scrollActive = () => {
     const scrollDown = window.scrollY;
 
     sections.forEach((current) => {
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute("id"),
-            sectionClass = document.querySelector(
-                ".nav-menu a[href*= " + sectionId + "]"
-            );
-
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 58;
+        const sectionId = current.getAttribute("id");
+        const sectionClass = document.querySelector(
+            ".nav-menu a[href*= " + sectionId + "]"
+        );
         if (
             scrollDown > sectionTop &&
             scrollDown <= sectionTop + sectionHeight
@@ -84,6 +83,8 @@ const scrollActive = () => {
         }
     });
 };
+
+window.addEventListener("scroll", scrollActive);
 
 const sr = ScrollReveal({
     origin: "top",
