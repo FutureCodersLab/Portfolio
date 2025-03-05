@@ -1,8 +1,5 @@
 #home {
     background-color: var(--background);
-    position: relative;
-    overflow: hidden;
-    width: 100%;
 }
 
 #home .background-wave {
@@ -10,7 +7,7 @@
     bottom: 50px;
     left: 0;
     height: 450px;
-    z-index: 0;
+    z-index: -1;
 }
 
 #home .container {
@@ -33,7 +30,7 @@
     margin-bottom: 12px;
 }
 
-#home .content-container {
+#home .container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,17 +70,15 @@
     gap: 24px;
 }
 
-#home .content .title-container {
-    position: relative;
-    width: max-content;
-}
-
-#home .content .title-container .double-line {
+#home .content h1::before {
+    content: "";
+    background: url(../images/doodles/double-line.png) no-repeat center/contain;
     position: absolute;
     bottom: -15px;
     right: 5px;
     width: 135px;
     height: 17px;
+    z-index: -1;
 }
 
 #home .button-container button {
@@ -184,7 +179,7 @@
         left: 0;
     }
 
-    #home .content-container {
+    #home .container {
         width: 100%;
         flex-direction: row-reverse;
         gap: 52px;
@@ -211,8 +206,7 @@
         gap: 32px;
     }
 
-    #home .content .title-container .double-line {
-        bottom: -15px;
+    #home .content h1::before {
         width: calc(145px * 1.2);
         height: calc(17px * 1.2);
     }
@@ -240,7 +234,7 @@
         gap: 60px;
     }
 
-    #home .content .title-container .double-line {
+    #home .content h1::before {
         bottom: -30px;
         width: calc(145px * 2.25);
         height: calc(17px * 2.25);

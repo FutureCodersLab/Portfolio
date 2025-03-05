@@ -1,8 +1,5 @@
 #contact-me {
     background-color: var(--background);
-    position: relative;
-    overflow: hidden;
-    width: 100%;
 }
 
 #contact-me .background-wave {
@@ -10,29 +7,23 @@
     bottom: -50%;
     left: -10%;
     height: 100%;
-    z-index: 0;
+    z-index: -1;
     transform: rotate(90deg);
 }
 
-#contact-me .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 40px;
+#contact-me h2 {
+    width: auto;
 }
 
-#contact-me .title-container {
-    position: relative;
-}
-
-#contact-me .title-container .wavy-line {
+#contact-me h2::before {
+    content: "";
+    background: url(../images/doodles/wavy-line.png) no-repeat center/contain;
     position: absolute;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 155px;
-    height: 10px;
+    width: 200px;
+    height: 14px;
 }
 
 #contact-me .content {
@@ -117,12 +108,10 @@
         transform: rotate(0);
     }
 
-    #contact-me .title-container .wavy-line {
-        right: 0;
+    #contact-me h2::before {
+        right: -25px;
         left: unset;
         transform: unset;
-        width: calc(167px * 1.05);
-        height: calc(10px * 1.05);
     }
 
     #contact-me .content {
@@ -151,17 +140,19 @@
 }
 
 @media (min-width: 1200px) {
+    #contact-me {
+        gap: 60px;
+    }
+
     #contact-me .background-wave {
         height: 120%;
     }
 
-    #contact-me .container {
-        gap: 60px;
-    }
-
-    #contact-me .title-container .wavy-line {
-        width: calc(167px * 1.6);
-        height: calc(10px * 1.6);
+    #contact-me h2::before {
+        bottom: -20px;
+        right: -40px;
+        width: calc(200px * 1.75);
+        height: calc(14px * 1.75);
     }
 
     #contact-me .content {

@@ -1,12 +1,3 @@
-#projects .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 32px;
-    width: 100%;
-}
-
 #projects .header {
     display: flex;
     justify-content: center;
@@ -15,18 +6,15 @@
     gap: 32px;
 }
 
-#projects .title-container {
-    position: relative;
-    width: max-content;
-}
-
-#projects .title-container .circle {
+#projects h2::before {
+    content: "";
+    background: url(../images/doodles/circle.png) no-repeat center/contain;
     position: absolute;
     top: -15px;
     right: 0;
     width: 90px;
     height: 72px;
-    z-index: 0;
+    z-index: -1;
 }
 
 #projects .filter-container {
@@ -199,6 +187,10 @@
 }
 
 @media (min-width: 768px) {
+    #projects {
+        gap: 60px;
+    }
+
     #projects .header {
         justify-content: space-between;
         flex-direction: row;
@@ -216,15 +208,11 @@
 }
 
 @media (min-width: 1200px) {
-    #projects .container {
-        gap: 60px;
-    }
-
     #projects .header {
-        width: calc(calc((350px * 3)) + calc((32px * 2)));
+        width: calc(350px * 3 + 32px * 2);
     }
 
-    #projects .title-container .circle {
+    #projects h2::before {
         top: -20px;
         width: calc(100px * 1.5);
         height: calc(80px * 1.5);
