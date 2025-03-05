@@ -3,614 +3,246 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <title>Portfolio</title>
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
-            crossorigin=""
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Portfolio</title>
+        <link rel="stylesheet" href="./css/styles.css" />
         <script
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
             defer
         ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+            defer
+        ></script>
         <script src="scrollreveal.min.js" defer></script>
-        <script type="module" src="script.js" defer></script>
+        <script type="module" src="./script.js" defer></script>
     </head>
     <body>
-        <header class="header" id="header">
-            <div class="nav container">
-                <a href="#" class="nav-logo">
-                    <span class="nav-logo-circle">R</span>
-                    <span class="nav-logo-name">Rian Lot. </span>
-                </a>
+        <nav>
+            <a href="#" class="logo">
+                <span class="circle">F</span>
+                <span class="name">Fernando Ordonez</span>
+            </a>
 
-                <div class="nav-menu">
-                    <span class="nav-title">Menu</span>
+            <div class="menu">
+                <span>Menu</span>
 
-                    <h3 class="nav-name">Rian</h3>
+                <h3 class="name">Fernando</h3>
 
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#home" class="nav-link active-link"
-                                >Home</a
-                            >
-                        </li>
+                <div class="links"></div>
 
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link">About Me</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#services" class="nav-link">Services</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#projects" class="nav-link">Projects</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link nav-link-button"
-                                >Contact Me</a
-                            >
-                        </li>
-                    </ul>
-
-                    <div class="nav-close">
-                        <i class="ri-close-line"></i>
-                    </div>
-                </div>
-
-                <div class="nav-buttons">
-                    <div class="nav-toggle">
-                        <i class="ri-menu-line"></i>
-                    </div>
-                </div>
+                <img src="./images/close.svg" class="close" />
             </div>
-        </header>
-        <main class="main">
-            <section class="home section" id="home"></section>
-            <div class="home-container container grid">
-                <h1 class="home-name">Rian Lot</h1>
 
-                <div class="home-profile">
-                    <div class="home-image">
+            <img src="./images/icons/open-menu.svg" class="open-menu" />
+        </nav>
+        <main id="main">
+            <section id="home">
+                <img
+                    src="./images/doodles/background-wave-1.svg"
+                    class="background-wave"
+                />
+                <div class="container">
+                    <div class="navigation">
+                        <a href="#" class="logo">
+                            <span class="circle">F</span>
+                            <span class="name">Fernando Ordonez.</span>
+                        </a>
                         <img
-                            src="img/home-profile.jpg"
-                            alt="image"
-                            class="home-img"
+                            src="./images/icons/open-menu.svg"
+                            class="open-menu"
                         />
-                        <div class="home-shadow"></div>
-                        <div class="geometric-box"></div>
                     </div>
-
-                    <div class="home-social">
-                        <a
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                            class="home-social-link"
-                        >
-                            <i class="ri-instagram-line"></i>
-                        </a>
-
-                        <a
-                            href="https://www.facebook.com/"
-                            target="_blank"
-                            class="home-social-link"
-                        >
-                            <i class="ri-facebook-circle-line"></i>
-                        </a>
-
-                        <a
-                            href="https://github.com/"
-                            target="_blank"
-                            class="home-social-link"
-                        >
-                            <i class="ri-github-line"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="home-info">
-                    <p class="home-description">
-                        <b>Frontend Developer</b>, with knowledge in web
-                        development and design, I offer the best projects
-                        resulting in quality work.
-                    </p>
-                </div>
-            </div>
-            <section class="about section" id="about">
-                <div class="about-container container grid">
-                    <h2 class="section-title-1">
-                        <span>About Me.</span>
-                    </h2>
-
-                    <div class="about-profile">
-                        <div class="about-image">
-                            <img
-                                src="img/about-profile.jpg"
-                                alt="image"
-                                class="about-img"
-                            />
-                            <div class="about-shadow"></div>
-                            <div class="geometric-box"></div>
-                            <div class="about-box"></div>
+                    <div class="content-container">
+                        <div class="image-container">
+                            <img src="./images/doodles/blob.png" class="blob" />
+                            <img src="./images/me/me.jpg" class="blob-image" />
                         </div>
-                    </div>
-                    <div class="about-info">
-                        <p class="about-description">
-                            Passionate about creating <b>Web Pages</b> with
-                            <b>UI/UX User Interface</b>, I have years of
-                            experience and many clients are happy with the
-                            projects carried out.
-                        </p>
-
-                        <ul class="about-list">
-                            <li class="about-item">
-                                <b>My Skills Are:</b> HTML, CSS, JavaScript,
-                                React, Git & GitHub, Bootstrap, Flutter & Figma.
-                            </li>
-                        </ul>
-
-                        <div class="about-buttons">
-                            <a href="#contact" class="button">
-                                <i class="ri-send-plane-line"></i> Contact Me
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="services section" id="services">
-                <h2 class="section-title-2">
-                    <span>Services.</span>
-                </h2>
-
-                <div class="services-container container grid">
-                    <article class="services-card">
-                        <div class="services-border"></div>
-
-                        <div class="services-content">
-                            <div class="services-icon">
-                                <div class="services-box"></div>
-                                <i class="ri-layout-4-line"></i>
-                            </div>
-
-                            <h2 class="services-title">Web Design</h2>
-
-                            <p class="services-description">
-                                Beautiful and elegant designs with interfaces
-                                that are intuitive, efficient and pleasant to
-                                use for the user.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="services-card">
-                        <div class="services-border"></div>
-
-                        <div class="services-content">
-                            <div class="services-icon">
-                                <div class="services-box"></div>
-                                <i class="ri-code-box-line"></i>
-                            </div>
-
-                            <h2 class="services-title">Development</h2>
-
-                            <p class="services-description">
-                                Custom web development tailored to your
-                                specifications, designed to provide a flawless
-                                user experience.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="services-card">
-                        <div class="services-border"></div>
-
-                        <div class="services-content">
-                            <div class="services-icon">
-                                <div class="services-box"></div>
-                                <i class="ri-smartphone-line"></i>
-                            </div>
-
-                            <h2 class="services-title">Mobile App</h2>
-
-                            <p class="services-description">
-                                Design and transform website projects into
-                                mobile apps to provide a seamless user
-                                experience.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="projects section" id="projects">
-                <h2 class="section-title-1">
-                    <span>Projects.</span>
-                </h2>
-
-                <div class="projects-container container grid">
-                    <article class="projects-card">
-                        <div class="projects-image">
-                            <img
-                                src="img/project-1.jpg"
-                                alt="image"
-                                class="projects-img"
-                            />
-
-                            <a href="#" class="projects-button button">
-                                <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects-content">
-                            <h3 class="projects-subtitle">Website</h3>
-                            <h2 class="projects-title">Restaurant Website</h2>
-
-                            <p class="projects-description">
-                                Project that you carry out in the design and
-                                structure of the layout, showing the design at
-                                the client's request.
-                            </p>
-                        </div>
-
-                        <div class="projects-buttons">
-                            <a
-                                href="https://github.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-github-line"></i>View
-                            </a>
-
-                            <a
-                                href="https://dribbble.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-global-line"></i>View
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="projects-card">
-                        <div class="projects-image">
-                            <img
-                                src="img/project-2.jpg"
-                                alt="image"
-                                class="projects-img"
-                            />
-
-                            <a href="#" class="projects-button button">
-                                <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects-content">
-                            <h3 class="projects-subtitle">App</h3>
-                            <h2 class="projects-title">Yoga App</h2>
-
-                            <p class="projects-description">
-                                Project that you carry out in the design and
-                                structure of the layout, showing the design at
-                                the client's request.
-                            </p>
-                        </div>
-
-                        <div class="projects-buttons">
-                            <a
-                                href="https://github.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-github-line"></i>View
-                            </a>
-
-                            <a
-                                href="https://dribbble.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-global-line"></i>View
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="projects-card">
-                        <div class="projects-image">
-                            <img
-                                src="img/project-3.jpg"
-                                alt="image"
-                                class="projects-img"
-                            />
-
-                            <a href="#" class="projects-button button">
-                                <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects-content">
-                            <h3 class="projects-subtitle">App</h3>
-                            <h2 class="projects-title">Fast Food App</h2>
-
-                            <p class="projects-description">
-                                Project that you carry out in the design and
-                                structure of the layout, showing the design at
-                                the client's request.
-                            </p>
-                        </div>
-
-                        <div class="projects-buttons">
-                            <a
-                                href="https://github.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-github-line"></i>View
-                            </a>
-
-                            <a
-                                href="https://dribbble.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-global-line"></i>View
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="projects-card">
-                        <div class="projects-image">
-                            <img
-                                src="img/project-1.jpg"
-                                alt="image"
-                                class="projects-img"
-                            />
-
-                            <a href="#" class="projects-button button">
-                                <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects-content">
-                            <h3 class="projects-subtitle">Website</h3>
-                            <h2 class="projects-title">
-                                Coffee Delivery Website
-                            </h2>
-
-                            <p class="projects-description">
-                                Project that you carry out in the design and
-                                structure of the layout, showing the design at
-                                the client's request.
-                            </p>
-                        </div>
-
-                        <div class="projects-buttons">
-                            <a
-                                href="https://github.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-github-line"></i>View
-                            </a>
-
-                            <a
-                                href="https://dribbble.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-global-line"></i>View
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="projects-card">
-                        <div class="projects-image">
-                            <img
-                                src="img/project-2.jpg"
-                                alt="image"
-                                class="projects-img"
-                            />
-
-                            <a href="#" class="projects-button button">
-                                <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects-content">
-                            <h3 class="projects-subtitle">Website</h3>
-                            <h2 class="projects-title">Barbershop Website</h2>
-
-                            <p class="projects-description">
-                                Project that you carry out in the design and
-                                structure of the layout, showing the design at
-                                the client's request.
-                            </p>
-                        </div>
-
-                        <div class="projects-buttons">
-                            <a
-                                href="https://github.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-github-line"></i>View
-                            </a>
-
-                            <a
-                                href="https://dribbble.com/"
-                                target="_blank"
-                                class="projects-link"
-                            >
-                                <i class="ri-global-line"></i>View
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="contact section" id="contact">
-                <div class="contact-container grid">
-                    <div class="contact-data">
-                        <h2 class="section-title-2">
-                            <span>Contact Me.</span>
-                        </h2>
-
-                        <p class="contact-description-1">
-                            I will read all emails. Send me any message you want
-                            and I'll get back to you.
-                        </p>
-
-                        <p class="contact-description-2">
-                            I need your <b>Name</b> and <b>Email Address</b>,
-                            but you won't receive anything other than your
-                            reply.
-                        </p>
-
-                        <div class="geometric-box"></div>
-                    </div>
-
-                    <div class="contact-mail">
-                        <h2 class="contact-title">Send Me A Message</h2>
-
-                        <form action="" class="contact-form" id="contact-form">
-                            <div class="contact-group">
-                                <div class="contact-box">
-                                    <input
-                                        type="text"
-                                        name="user-name"
-                                        class="contact-input"
-                                        id="name"
-                                        required
-                                        placeholder="First Name"
-                                    />
-                                    <label for="name" class="contact-label"
-                                        >First Name
-                                    </label>
-                                </div>
-
-                                <div class="contact-box">
-                                    <input
-                                        type="email"
-                                        name="user-email"
-                                        class="contact-input"
-                                        id="email"
-                                        required
-                                        placeholder="Email Address"
-                                    />
-                                    <label for="email" class="contact-label"
-                                        >Email Address</label
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="contact-box">
-                                <input
-                                    type="text"
-                                    name="user-subject"
-                                    class="contact-input"
-                                    id="subject"
-                                    required
-                                    placeholder="Subject"
+                        <div class="content">
+                            <div class="title-container">
+                                <h1>Hey Friends!</h1>
+                                <img
+                                    src="./images/doodles/double-line.png"
+                                    class="double-line"
                                 />
-                                <label for="subject" class="contact-label"
-                                    >Subject</label
-                                >
                             </div>
-
-                            <div class="contact-box contact-area">
-                                <textarea
-                                    name="user-message"
-                                    id="message"
-                                    class="contact-input"
-                                    required
-                                    placeholder="Message"
-                                ></textarea>
-                                <label for="message" class="contact-label"
-                                    >Message</label
-                                >
+                            <h4>
+                                I’m Ali. I’m a Doctor turned Entrepreneur,
+                                Youtube, and the author of the New York Times
+                                bestseller, Feel Good Productivity.
+                            </h4>
+                            <div class="button-container">
+                                <button type="button" class="download-resume">
+                                    <a
+                                        class="text"
+                                        href="./assets/resume.pdf"
+                                        download
+                                    >
+                                        Resume
+                                    </a>
+                                    <img
+                                        src="./images/icons/download.svg"
+                                        class="icon"
+                                    />
+                                </button>
+                                <button type="button" class="contact-me">
+                                    <span class="text">Contact Me</span>
+                                    <img
+                                        src="./images/icons/mail.svg"
+                                        class="icon"
+                                    />
+                                </button>
                             </div>
-
-                            <button type="submit" class="contact-button button">
-                                <i class="ri-send-plane-line"></i> Send Message
-                            </button>
-                        </form>
+                        </div>
                     </div>
+                </div>
+            </section>
+            <section id="about-me">
+                <div class="container">
+                    <div class="content-container">
+                        <div class="images-container">
+                            <div class="image">
+                                <img src="./images/me/me.jpg" class="picture" />
+                            </div>
+                            <div class="image">
+                                <img src="./images/me/me.jpg" class="picture" />
+                            </div>
+                            <div class="image">
+                                <img src="./images/me/me.jpg" class="picture" />
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="title-container">
+                                <h2>Hi I’m Fernando</h2>
+                                <img
+                                    src="./images/doodles/double-line.png"
+                                    class="double-line"
+                                />
+                            </div>
+                            <p>
+                                I’m an ex-doctor turned YouTuber, Podcaster,
+                                entrepreneur and author. I’ve been creating
+                                YouTube videos for over 7 years and have a
+                                following of over 4 million over on my main
+                                channel.<br /><br />
+                                My YouTube journey started over 7 years ago when
+                                I was studying medicine at Cambridge University,
+                                I was creating videos to help people pass the
+                                entrance exams (This is when I started my first
+                                business too). Since then, the channel has grown
+                                to over 6 million subscribers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button>Explore My Github</button>
+                        <button>Find Me On LinkedIn</button>
+                        <button>Drop Me A Message</button>
+                    </div>
+                </div>
+            </section>
+            <section id="references">
+                <div class="background-wave-container">
+                    <img
+                        src="./images/doodles/background-wave-2.svg"
+                        class="background-wave"
+                    />
+                </div>
+                <div class="container">
+                    <div class="title-container">
+                        <h2>What Others Say</h2>
+                        <img
+                            src="./images/doodles/wavy-line.png"
+                            class="wavy-line"
+                        />
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                        <div class="swiper-pagination"></div>
+                        <!-- <div class="swiper-button-prev"></div> -->
+                        <!-- <div class="swiper-button-next"></div> -->
+                    </div>
+                </div>
+            </section>
 
-                    <div class="contact-social">
-                        <div class="contact-social-data">
+            <section id="projects">
+                <div class="container">
+                    <div class="header">
+                        <div class="title-container">
+                            <h2>Projects I've Built</h2>
+                            <img
+                                src="./images/doodles/circle.png"
+                                class="circle"
+                            />
+                        </div>
+                        <div class="filter-container">
+                            <span class="label">Filter By:</span>
+                            <span class="filter">Functional</span>
+                        </div>
+                    </div>
+                    <div class="projects-container"></div>
+                </div>
+            </section>
+
+            <section id="contact-me">
+                <img
+                    src="./images/doodles/background-wave-3.svg"
+                    class="background-wave"
+                />
+                <div class="container">
+                    <div class="title-container">
+                        <h2>Drop Me A Message</h2>
+                        <img
+                            src="./images/doodles/wavy-line.png"
+                            class="wavy-line"
+                        />
+                    </div>
+                    <div class="content">
+                        <form action="">
                             <div>
-                                <p class="contact-social-description-1">
-                                    Does not send emails
-                                </p>
-
-                                <p class="contact-social-description-2">
-                                    Write me on my social networks
-                                </p>
+                                <input type="text" placeholder="First Name" />
+                                <input
+                                    type="email"
+                                    placeholder="Email Address"
+                                />
                             </div>
-
-                            <div class="contact-social-links">
-                                <a
-                                    href="https://www.facebook.com/"
-                                    target="blank"
-                                    class="contact-social-link"
-                                >
-                                    <i class="ri-facebook-circle-line"></i>
-                                </a>
-
-                                <a
-                                    href="https://www.instagram.com/"
-                                    target="_blank"
-                                    class="contact-social-link"
-                                >
-                                    <i class="ri-instagram-line"></i>
-                                </a>
-
-                                <a
-                                    href="https://www.linkedin.com/"
-                                    target="_blank"
-                                    class="contact-social-link"
-                                >
-                                    <i class="ri-github-line"></i>
-                                </a>
+                            <input type="text" placeholder="Subject" />
+                            <textarea placeholder="Message"></textarea>
+                            <div class="button-container">
+                                <button>Send Message</button>
                             </div>
+                        </form>
+                        <div class="info">
+                            <p>
+                                Thank you for your interest in contacting us.
+                                You can send us a message using the contact form
+                                below, or email support@markmanson.net and we’ll
+                                get back to you. <br /><br />
+                                Always remember the age-old proverb: if at first
+                                you don’t succeed, try, try logging out and back
+                                in.
+                            </p>
+                            <div class="links"></div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="footer">
-            <div class="footer-container container grid">
-                <ul class="footer-links">
-                    <li>
-                        <a href="#home" class="footer-link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#about" class="footer-link">About</a>
-                    </li>
+        <footer>
+            <div class="links"></div>
 
-                    <li>
-                        <a href="#services" class="footer-link">Services</a>
-                    </li>
-
-                    <li>
-                        <a href="#projects" class="footer-link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer-link">Contact Me</a>
-                    </li>
-                </ul>
-
-                <span class="footer-copy">
-                    &#169; All Rights Reserved By
-                    <a href="">Future Coders Lab</a>
-                </span>
-            </div>
+            <span class="copyright">
+                &#169; All Rights Reserved By
+                <a href="">Future Coders Lab</a>
+            </span>
         </footer>
 
         <a href="#" class="scroll-up">
-            <i class="ri-arrow-up-s-line"></i>
+            <img src="./images/icons/scroll-up.svg" />
         </a>
     </body>
 </html>

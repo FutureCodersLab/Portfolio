@@ -1,0 +1,197 @@
+#contact-me {
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+#contact-me .background-wave {
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    height: 100%;
+    z-index: 0;
+    transform: rotate(90deg);
+}
+
+#contact-me .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#contact-me .title-container {
+    position: relative;
+}
+
+#contact-me .title-container .wavy-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px;
+    height: 10px;
+}
+
+#contact-me .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#contact-me .content form,
+#contact-me .content form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+#contact-me .content form input,
+#contact-me .content form textarea {
+    all: unset;
+    padding: 12px 20px;
+    width: calc(100% - 40px);
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid var(--dark-blue);
+}
+
+#contact-me .content form textarea {
+    min-height: 200px;
+}
+
+#contact-me .content form input::placeholder,
+#contact-me .content form textarea::placeholder {
+    color: var(--gray-blue);
+}
+
+#contact-me .content .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#contact-me .content .info .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#contact-me .content .info .links a {
+    background-color: var(--dark-blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease all;
+}
+
+#contact-me .content .info .links a:hover {
+    background-color: var(--red);
+    transform: scale(1.1);
+}
+
+#contact-me .content .info .links a img {
+    width: 21px;
+    height: 21px;
+}
+
+@media (min-width: 768px) {
+    #contact-me .background-wave {
+        bottom: 0;
+        right: -10%;
+        left: unset;
+        height: 100%;
+        transform: rotate(0);
+    }
+
+    #contact-me .title-container .wavy-line {
+        right: 0;
+        left: unset;
+        transform: unset;
+        width: calc(167px * 1.05);
+        height: calc(10px * 1.05);
+    }
+
+    #contact-me .content {
+        flex-direction: row;
+        gap: 48px;
+        width: 100%;
+    }
+
+    #contact-me .content form {
+        width: max-content;
+        flex: 1;
+    }
+
+    #contact-me .content form div {
+        width: 100%;
+    }
+
+    #contact-me .content form textarea {
+        min-height: 150px;
+    }
+
+    #contact-me .content .info {
+        align-self: flex-start;
+        width: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #contact-me .background-wave {
+        height: 120%;
+    }
+
+    #contact-me .container {
+        gap: 60px;
+    }
+
+    #contact-me .title-container .wavy-line {
+        width: calc(167px * 1.6);
+        height: calc(10px * 1.6);
+    }
+
+    #contact-me .content {
+        justify-content: space-between;
+    }
+
+    #contact-me .content form {
+        max-width: 700px;
+    }
+
+    #contact-me .content form div {
+        flex-direction: row;
+    }
+
+    #contact-me .content .info {
+        width: 600px;
+        gap: 32px;
+    }
+
+    #contact-me .content .info .links {
+        gap: 40px;
+    }
+
+    #contact-me .content .info .links a {
+        width: calc(36px * 1.4);
+        height: calc(36px * 1.4);
+    }
+
+    #contact-me .content .info .links a img {
+        width: calc(21px * 1.4);
+        height: calc(21px * 1.4);
+    }
+}
