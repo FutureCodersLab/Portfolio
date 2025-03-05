@@ -17,7 +17,7 @@
 
 #contact-me h2::before {
     content: "";
-    background: url(../images/doodles/wavy-line.png) no-repeat center/contain;
+    background: var(--wavy-line);
     position: absolute;
     bottom: -12px;
     left: 50%;

@@ -8,7 +8,7 @@
 
 #projects h2::before {
     content: "";
-    background: url(../images/doodles/circle.png) no-repeat center/contain;
+    background: var(--circle);
     position: absolute;
     top: -15px;
     right: 0;

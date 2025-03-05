@@ -20,7 +20,7 @@
 
 #references h2::before {
     content: "";
-    background: url(../images/doodles/wavy-line.png) no-repeat center/contain;
+    background: var(--wavy-line);
     position: absolute;
     bottom: -10px;
     left: 108px;
@@ -164,108 +164,5 @@
 
     #references .swiper {
         height: 525px;
-    }
-
-    #references .swiper-slide {
-        background: var(--white);
-        height: max-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 20px;
-        border-radius: 20px;
-        padding: 0 16px;
-        padding-top: 20px;
-        padding-bottom: 30px;
-        border: 5px solid var(--dark-blue);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-    }
-
-    #references .swiper-slide .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 28px;
-    }
-
-    #references .swiper-slide .content .header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        width: 100%;
-    }
-
-    #references .swiper-slide .content .header img {
-        width: 55px;
-        height: 55px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    #references .swiper-slide .content .header .author-info {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    #references .swiper-slide .content .header .author-info .name {
-        font-family: var(--title-font);
-        font-size: var(--font-size-xs);
-        font-weight: 700;
-        color: var(--dark-blue);
-    }
-
-    #references .swiper-slide .content .header .author-info .info {
-        font-family: var(--text-font);
-        font-size: var(--font-size-xxs);
-        font-weight: 400;
-        color: var(--gray-blue);
-    }
-
-    #references .swiper-slide .reference {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    #references .swiper-slide .reference a {
-        font-family: var(--text-font);
-        font-size: var(--font-size-xxs);
-        color: var(--blue);
-        text-decoration: underline;
-    }
-
-    #references .swiper-slide .quotes {
-        height: 40px;
-        object-fit: contain;
-    }
-
-    #references .swiper-slide .line-decoration {
-        background-color: var(--light-blue);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 10px;
-    }
-
-    #references .swiper-pagination {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    #references .swiper-pagination-bullet {
-        background-color: var(--dark-blue);
-        opacity: 1;
-        width: 10px;
-        height: 10px;
-    }
-
-    #references .swiper-pagination-bullet-active {
-        background-color: var(--red);
     }
 }

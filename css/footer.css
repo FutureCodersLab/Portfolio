@@ -32,6 +32,6 @@ footer .copyright {
 }
 
 footer .copyright a {
-    color: var(--white-color);
+    color: var(--white);
     font-weight: 600;
 }

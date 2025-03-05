@@ -1,3 +1,5 @@
+@import url("./variables.scss");
+
 #home {
     background-color: var(--background);
 }
@@ -57,9 +59,7 @@
     height: 215px;
     width: 205px;
     object-fit: cover;
-    mask-image: url("../images/doodles/blob.png");
-    mask-repeat: no-repeat;
-    mask-size: cover;
+    mask: var(--blob);
 }
 
 #home .content {
@@ -72,7 +72,7 @@
 
 #home .content h1::before {
     content: "";
-    background: url(../images/doodles/double-line.png) no-repeat center/contain;
+    background: var(--double-line);
     position: absolute;
     bottom: -15px;
     right: 5px;

@@ -32,7 +32,7 @@
     left: -15px;
     width: 20px;
     height: 23px;
-    background: url(../images/doodles/highlight.png) no-repeat center/contain;
+    background: var(--highlight);
     transform: scaleY(-1);
 }
 
@@ -56,7 +56,7 @@
     left: -15px;
     width: 20px;
     height: 23px;
-    background: url(../images/doodles/highlight.png) no-repeat center/contain;
+    background: var(--highlight);
 }
 
 #about-me .images-container .image:nth-child(3) {
@@ -79,7 +79,7 @@
     right: -15px;
     width: 20px;
     height: 23px;
-    background: url(../images/doodles/highlight.png) no-repeat center/contain;
+    background: var(--highlight);
     transform: scaleX(-1);
 }
 
@@ -91,8 +91,7 @@
     transform: translateX(-50%);
     width: 125px;
     height: 55px;
-    background: url(../images/doodles/squiggly-line.png) no-repeat
-        center/contain;
+    background: var(--squiggly-line);
 }
 
 #about-me .content {
@@ -105,7 +104,7 @@
 
 #about-me .content h2::before {
     content: "";
-    background: url(../images/doodles/double-line.png) no-repeat center/contain;
+    background: var(--double-line);
     position: absolute;
     bottom: -15px;
     right: 0;
