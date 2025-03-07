@@ -1,5 +1,3 @@
-@import url("./variables.scss");
-
 #home {
     background-color: var(--background);
 }
@@ -22,14 +20,6 @@
     flex-direction: column;
     gap: 40px;
     z-index: 1;
-}
-
-#home .navigation {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
 }
 
 #home .container {
@@ -97,78 +87,29 @@
     width: 22px;
 }
 
-#home canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+#home .download-resume {
+    transition: 0.5s ease all;
 }
 
-#home .buttons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-#home .buttons-container button {
-    all: unset;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s ease background-color;
-}
-
-#home .buttons-container button:hover {
-    background-color: var(--black-color-light);
-}
-
-#home .download-cv:not(active).complete {
+#home .download-resume.complete {
     background-color: #50c878;
 }
 
-#home .download-cv .text {
+#home .download-resume .text {
     color: white;
     pointer-events: none;
+    transition: 0.5s ease all;
 }
 
-#home .download-cv .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+#home .download-resume .icon {
     width: 24px;
     height: 24px;
-    pointer-events: none;
+    transition: 0.5s ease all;
 }
 
-#home .download-cv .icon i {
-    position: absolute;
-    transform: translateY(0);
-    opacity: 1;
-    transition: 0.15s ease transform, 0.15s ease opacity;
-}
-
-#home .download-cv .icon i.exiting {
-    transform: translateY(100%);
-    opacity: 0;
-}
-
-#home .download-cv .icon i.entering {
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-#home .download-cv .icon i.active {
-    transform: translateY(0);
-    opacity: 1;
+#home .download-resume.complete .icon {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 @media (min-width: 768px) {
@@ -213,6 +154,10 @@
 }
 
 @media (min-width: 1200px) {
+    #home {
+        padding-top: 44px;
+    }
+
     #home .background-wave {
         height: 100%;
         width: 100%;

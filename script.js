@@ -16,11 +16,13 @@ const scrollReveal = ScrollReveal({
     delay: 400,
 });
 
+const menuNavLinks = document.querySelector(".menu .nav-links");
 const homeNavigation = document.querySelector("#home .navigation");
+const homeNavLinks = document.querySelector("#home .nav-links");
 const nav = document.querySelector("nav");
 const scrollUp = document.querySelector(".scroll-up");
 
-const navLinksContainer = document.querySelector("nav .menu .links");
+const navLinksContainer = document.querySelector("nav .nav-links");
 const referencesContainer = document.querySelector(".swiper-wrapper");
 const projectsContainer = document.querySelector(".projects-container");
 const contactMeLinksContainer = document.querySelector("#contact-me .links");
@@ -39,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionLinks.map((section, index) => {
         const className = index === 0 ? "active" : "";
         navLinksContainer.appendChild(getNavLinkStructure(section, className));
+        homeNavLinks.appendChild(getNavLinkStructure(section, className));
+        menuNavLinks.appendChild(getNavLinkStructure(section, className));
         footerLinks.appendChild(getNavLinkStructure(section));
     });
 
@@ -84,27 +88,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const navMenu = document.querySelector("nav .menu");
-const navOpen = document.querySelector("nav .open-menu");
-const navClose = document.querySelector("nav .menu .close");
-if (navOpen) {
-    navOpen.addEventListener("click", () => {
-        navMenu.classList.add("active");
-    });
-}
+const menu = document.querySelector(".menu");
+const closeMenu = document.querySelector(".menu .close-menu");
+const navOpenMenu = document.querySelector("nav .open-menu");
+const homeOpenMenu = document.querySelector("#home .open-menu");
 
-if (navClose) {
-    navClose.addEventListener("click", () => {
+navOpenMenu.addEventListener("click", () => {
+    menu.classList.add("active");
+});
+
+homeOpenMenu.addEventListener("click", () => {
+    menu.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+    menu.classList.remove("active");
+});
+
+const navLink = document.querySelectorAll("nav .nav-links a");
+
+navLink.forEach((link) =>
+    link.addEventListener("click", () => {
         navMenu.classList.remove("active");
-    });
-}
-
-const navLink = document.querySelectorAll("nav .links a");
-
-const linkAction = () => {
-    navMenu.classList.remove("active");
-};
-navLink.forEach((link) => link.addEventListener("click", linkAction));
+    })
+);
 
 window.addEventListener("scroll", () => {
     const { bottom } = homeNavigation.getBoundingClientRect();
@@ -113,7 +120,7 @@ window.addEventListener("scroll", () => {
     scrollUp.classList.toggle("active", window.scrollY >= 350);
 });
 
-const contactForm = document.querySelector("form");
+const contactForm = document.querySelector("#form");
 
 const sendEmail = (e) => {
     e.preventDefault();
@@ -122,7 +129,7 @@ const sendEmail = (e) => {
         .sendForm(
             "service_d9lzyps", // serviceId
             "template_dqcrvtw", // templateId
-            "#contact-form", // formId
+            "#form", // formId
             "6DdhfNV_WGxG9gxiH" // publicKey
         )
         .then(() => {
@@ -145,15 +152,25 @@ const scrollActive = () => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 58;
         const sectionId = current.getAttribute("id");
+        const navLinks = document.querySelector(
+            `nav .nav-links a[href*="${sectionId}"]`
+        );
+        const homeLinks = document.querySelector(
+            `#home .nav-links a[href*="${sectionId}"]`
+        );
         const sectionClass = document.querySelector(
-            "nav .menu a[href*= " + sectionId + "]"
+            `.menu .nav-links a[href*="${sectionId}"]`
         );
         if (
             scrollDown > sectionTop &&
             scrollDown <= sectionTop + sectionHeight
         ) {
+            navLinks.classList.add("active");
+            homeLinks.classList.add("active");
             sectionClass.classList.add("active");
         } else {
+            navLinks.classList.remove("active");
+            homeLinks.classList.remove("active");
             sectionClass.classList.remove("active");
         }
     });
@@ -161,56 +178,29 @@ const scrollActive = () => {
 
 window.addEventListener("scroll", scrollActive);
 
-const downloadCVButton = document.querySelector("#home .download-resume");
-const buttonText = downloadCVButton.querySelector(".text");
-const buttonIcon = downloadCVButton.querySelector(".icon");
+const downloadResume = document.querySelector("#home .download-resume");
+const buttonText = downloadResume.querySelector(".text");
+const buttonIcon = downloadResume.querySelector(".icon");
 
-downloadCVButton.addEventListener("click", () => {
-    if (downloadCVButton.disabled) return;
-    downloadCVButton.disabled = true;
-    downloadCVButton.classList.add("complete");
+downloadResume.addEventListener("click", () => {
+    if (downloadResume.disabled) return;
+    downloadResume.disabled = true;
+    downloadResume.classList.add("complete");
 
-    const a = downloadCVButton.querySelector("a");
+    const a = downloadResume.querySelector("a");
     a.click();
 
-    const currentIcon = buttonIcon.querySelector("i");
-    const newCheckIcon = document.createElement("i");
-    newCheckIcon.className = "ri-check-line entering";
-
-    iconTransition(currentIcon, newCheckIcon);
+    const originalSrc = buttonIcon.src;
+    buttonIcon.src = "./images/icons/check.svg";
 
     buttonText.textContent = "Complete";
 
     setTimeout(() => {
-        downloadCVButton.classList.remove("complete");
+        downloadResume.classList.remove("complete");
 
-        const resetIcon = buttonIcon.querySelector("i");
-        const newDownloadIcon = document.createElement("i");
-        newDownloadIcon.className = "ri-download-2-fill entering";
+        buttonIcon.src = originalSrc;
 
-        iconTransition(resetIcon, newDownloadIcon);
-
-        buttonText.textContent = "Download CV";
-        downloadCVButton.disabled = false;
+        buttonText.textContent = "Resume";
+        downloadResume.disabled = false;
     }, 3000);
 });
-
-const iconTransition = (oldIcon, newIcon) => {
-    oldIcon.classList.remove("active");
-    oldIcon.classList.add("exiting");
-
-    oldIcon.addEventListener(
-        "transitionend",
-        () => {
-            oldIcon.remove();
-
-            buttonIcon.appendChild(newIcon);
-
-            setTimeout(() => {
-                newIcon.classList.remove("entering");
-                newIcon.classList.add("active");
-            }, 50);
-        },
-        { once: true }
-    );
-};

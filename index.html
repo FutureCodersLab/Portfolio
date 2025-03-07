@@ -21,21 +21,22 @@
         <script type="module" src="./script.js" defer></script>
     </head>
     <body>
+        <div class="menu">
+            <span>Menu</span>
+
+            <h3 class="name">Fernando</h3>
+
+            <div class="nav-links"></div>
+
+            <img src="./images/icons/close.svg" class="close-menu" />
+        </div>
         <nav>
             <a href="#" class="logo">
                 <span class="circle">F</span>
                 <span class="name">Fernando Ordonez</span>
             </a>
 
-            <div class="menu">
-                <span>Menu</span>
-
-                <h3 class="name">Fernando</h3>
-
-                <div class="links"></div>
-
-                <img src="./images/icons/close.svg" class="close" />
-            </div>
+            <div class="nav-links"></div>
 
             <img src="./images/icons/open-menu.svg" class="open-menu" />
         </nav>
@@ -50,6 +51,9 @@
                         <span class="circle">F</span>
                         <span class="name">Fernando Ordonez</span>
                     </a>
+
+                    <div class="nav-links"></div>
+
                     <img src="./images/icons/open-menu.svg" class="open-menu" />
                 </div>
                 <div class="container">
@@ -158,7 +162,7 @@
                 />
                 <h2>Drop Me A Message</h2>
                 <div class="content">
-                    <form>
+                    <form id="form">
                         <div>
                             <input type="text" placeholder="First Name" />
                             <input type="email" placeholder="Email Address" />

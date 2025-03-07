@@ -6,7 +6,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 16px;
+    padding: 24px 80px;
     background-color: var(--background);
     z-index: 100;
     opacity: 0;
@@ -20,12 +20,22 @@ nav.active {
     box-shadow: var(--light-shadow);
 }
 
-nav .menu {
+#home .navigation {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    z-index: 2;
+}
+
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: -600px;
     left: 0;
     background-color: hsla(0, 0%, 0%, 0.75);
@@ -34,28 +44,29 @@ nav .menu {
     text-align: center;
     backdrop-filter: blur(8px);
     transition: 0.3s ease all;
+    z-index: 101;
 }
 
-nav .menu.active {
+.menu.active {
     top: 0;
 }
 
-nav .menu span {
+.menu span {
     font-family: var(--title-font);
     font-size: var(--font-size-xxs);
     font-weight: 400;
     color: var(--white);
 }
 
-nav .menu .name {
+.menu .name {
     position: relative;
     width: max-content;
     color: var(--white);
     margin: 40px 0;
 }
 
-nav .menu .name::before,
-nav .menu .name::after {
+.menu .name::before,
+.menu .name::after {
     content: "";
     width: 100px;
     height: 2px;
@@ -64,22 +75,27 @@ nav .menu .name::after {
     top: 50%;
 }
 
-nav .menu .name::before {
+.menu .name::before {
     right: -120px;
 }
 
-nav .menu .name::after {
+.menu .name::after {
     left: -120px;
 }
 
-nav .links {
+nav .nav-links,
+#home .nav-links {
+    display: none;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 44px;
 }
 
-nav .links a {
+.nav-links a {
     position: relative;
     font-family: var(--title-font);
     font-size: var(--font-size-xxs);
@@ -88,11 +104,11 @@ nav .links a {
     transition: 0.3s ease all;
 }
 
-nav .links a:hover {
+.nav-links a:hover {
     color: var(--gray);
 }
 
-nav .links a::after {
+.nav-links a::after {
     content: "";
     width: 0;
     height: 2px;
@@ -100,69 +116,30 @@ nav .links a::after {
     position: absolute;
     left: 0;
     bottom: -8px;
-    transition: 0.3s ease all;
+    border-radius: 10px;
+    transition: 0.3s ease all 0.2s;
 }
 
-nav .links a:hover::after {
+.nav-links a.active::after {
     width: 25%;
 }
 
-nav .menu .close {
+.open-menu {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    height: 32px;
+    width: 32px;
+    padding: 4px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.menu .close-menu {
     position: absolute;
     top: 16px;
     right: 24px;
     cursor: pointer;
-    color: var(--white-color);
-}
-
-nav .links a.active::after {
-    width: 25%;
-}
-
-@media screen and (min-width: 1150px) {
-    nav {
-        padding: 15px 20px;
-        height: unset;
-    }
-
-    nav .open,
-    nav .menu .title {
-        display: none;
-    }
-
-    nav .links {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 2.5rem;
-        margin-right: 50px;
-    }
-
-    nav .links a {
-        color: var(--text-color);
-        font-size: var(--normal-font-size);
-    }
-    nav .links a:hover {
-        color: var(--title-color);
-    }
-    nav .links a::after {
-        background-color: var(--title-color);
-    }
-    nav .links a.active {
-        color: var(--black-color);
-    }
-    nav .links a:last-child {
-        background-color: var(--black-color);
-        color: var(--white-color);
-        padding: 12px 30px;
-        border-radius: 5px;
-    }
-    nav .links a:last-child:hover {
-        background-color: var(--text-color);
-    }
-    nav .links a:last-child::after {
-        background-color: transparent;
-    }
+    color: var(--white);
 }
 
 @media (min-width: 768px) {
@@ -176,4 +153,52 @@ nav .links a.active::after {
 }
 
 @media (min-width: 1200px) {
+    nav {
+        padding: 24px 112px;
+    }
+
+    .menu,
+    .open-menu {
+        display: none;
+    }
+
+    nav .nav-links,
+    #home .nav-links {
+        display: flex;
+        flex-direction: row;
+        margin-right: 60px;
+    }
+
+    nav .nav-links a,
+    #home .nav-links a {
+        color: var(--dark-blue);
+        font-size: var(--font-size-xs);
+        font-weight: 600;
+    }
+
+    .nav-links a::after {
+        height: 3px;
+    }
+
+    .nav-links a.active::after {
+        width: 35%;
+    }
+
+    nav .nav-links a:hover,
+    #home .nav-links a:hover {
+        color: var(--dark-blue);
+    }
+
+    nav .nav-links a:last-child,
+    #home .nav-links a:last-child {
+        background-color: var(--dark-blue);
+        color: var(--white);
+        padding: 12px 32px;
+        border-radius: 100px;
+    }
+
+    .nav-links a:last-child::after,
+    #home .nav-links a:last-child::after {
+        background-color: transparent;
+    }
 }
