@@ -13,7 +13,7 @@ export const homeLinks = [
     },
 ];
 
-export const contactMeLinks = [
+export const socialLinks = [
     {
         href: "https://www.github.com/",
         icon: "../images/icons/socials/github-white.svg",

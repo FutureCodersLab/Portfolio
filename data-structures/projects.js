@@ -1,4 +1,4 @@
-export default [
+export const projects = [
     {
         name: "Peek A Boo",
         description:
@@ -7,6 +7,7 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/Gotham-Defender",
         image: "../images/projects/gotham-defender.png",
         skills: ["html", "css", "javascript"],
+        category: "game",
     },
     {
         name: "Piano",
@@ -16,6 +17,7 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/Piano",
         image: "../images/projects/piano.png",
         skills: ["html", "css", "javascript"],
+        category: "creative",
     },
     {
         name: "Hangman",
@@ -25,6 +27,7 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/Hangman",
         image: "../images/projects/hangman.png",
         skills: ["html", "css", "javascript"],
+        category: "game",
     },
     {
         name: "Sketch Zone",
@@ -34,6 +37,7 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/Sketch-Zone",
         image: "../images/projects/sketch-zone.png",
         skills: ["html", "css", "javascript"],
+        category: "creative",
     },
     {
         name: "To-Do List",
@@ -43,6 +47,7 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/To-Do-List",
         image: "../images/projects/to-do-list.png",
         skills: ["html", "css", "javascript", "api"],
+        category: "functional",
     },
     {
         name: "Chatbot",
@@ -52,5 +57,6 @@ export default [
         githubLink: "https://github.com/FutureCodersLab/Chatbot",
         image: "../images/projects/chatbot.png",
         skills: ["html", "css", "javascript", "api"],
+        category: "functional",
     },
 ];

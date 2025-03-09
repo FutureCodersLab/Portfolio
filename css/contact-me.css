@@ -71,14 +71,14 @@
     gap: 16px;
 }
 
-#contact-me .content .info .links {
+#contact-me .content .info .socials {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-#contact-me .content .info .links a {
+#contact-me .content .info .socials a {
     background-color: var(--dark-blue);
     width: 36px;
     height: 36px;
@@ -89,12 +89,12 @@
     transition: 0.3s ease all;
 }
 
-#contact-me .content .info .links a:hover {
+#contact-me .content .info .socials a:hover {
     background-color: var(--red);
     transform: scale(1.1);
 }
 
-#contact-me .content .info .links a img {
+#contact-me .content .info .socials a img {
     width: 21px;
     height: 21px;
 }
@@ -172,16 +172,16 @@
         gap: 32px;
     }
 
-    #contact-me .content .info .links {
+    #contact-me .content .info .socials {
         gap: 40px;
     }
 
-    #contact-me .content .info .links a {
+    #contact-me .content .info .socials a {
         width: calc(36px * 1.4);
         height: calc(36px * 1.4);
     }
 
-    #contact-me .content .info .links a img {
+    #contact-me .content .info .socials a img {
         width: calc(21px * 1.4);
         height: calc(21px * 1.4);
     }
