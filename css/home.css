@@ -71,20 +71,20 @@
     z-index: -1;
 }
 
-#home .button-container button {
+#home .button-container a {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-#home .button-container button .text {
+#home .button-container a .text {
     color: var(--white);
 }
 
-#home .button-container button .icon {
-    height: 22px;
-    width: 22px;
+#home .button-container a .icon {
+    height: 20px;
+    width: 20px;
 }
 
 #home .download-resume {

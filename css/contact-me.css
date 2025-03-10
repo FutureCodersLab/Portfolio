@@ -68,7 +68,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
 }
 
 #contact-me .content .info .socials {

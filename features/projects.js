@@ -126,6 +126,13 @@ const getProjectStructure = (project) => {
             </div>
         </div>
     `;
+
+    div.addEventListener("click", (e) => {
+        if (!e.target.closest("a")) {
+            window.open(websiteLink, "_blank");
+        }
+    });
+
     return div;
 };
 
