@@ -2,7 +2,7 @@ export const projects = [
     {
         name: "Gotham-Defender",
         description:
-            "Challenge your reflexes with Gotham-Defender, the fast-paced game where you must click the Joker for points—but avoid hitting Batman!",
+            "Put your reflexes to the test in Gotham-Defender, a game where you click the Joker to earn points but watch out—clicking Batman will cost you!",
         websiteLink: "https://futurecoderslab.github.io/Gotham-Defender/",
         githubLink: "https://github.com/FutureCodersLab/Gotham-Defender",
         image: "./images/projects/gotham-defender.png",
