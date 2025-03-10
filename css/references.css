@@ -165,4 +165,8 @@
     #references .swiper {
         height: 525px;
     }
+
+    #references .swiper-slide .reference a {
+        font-size: var(--font-size-xs);
+    }
 }
