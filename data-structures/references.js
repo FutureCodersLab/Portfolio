@@ -1,4 +1,4 @@
-export default [
+export const references = [
     {
         image: "./images/me/naruto.webp",
         name: "Fernando Ordonez",

@@ -1,11 +1,11 @@
-import sectionLinks from "../data-structures/sections.js";
+import { sectionsData } from "../data-structures/sections.js";
 import { socialLinks } from "../data-structures/links.js";
 
 const footerLinks = document.querySelector("footer .links");
 const socialsContainer = document.querySelector("footer .socials");
 
 export const setupFooter = () => {
-    sectionLinks.map((section) => {
+    sectionsData.map((section) => {
         footerLinks.appendChild(getLinkStructure(section));
     });
     socialLinks.forEach((link) =>

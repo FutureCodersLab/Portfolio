@@ -1,4 +1,4 @@
-import sectionLinks from "../data-structures/sections.js";
+import { sectionsData } from "../data-structures/sections.js";
 
 const navLinksContainer = document.querySelectorAll(".nav-links");
 const navLinks = document.querySelectorAll("nav .nav-links a");
@@ -11,7 +11,7 @@ const scrollUp = document.querySelector(".scroll-up");
 const sections = document.querySelectorAll("section[id]");
 
 export const setupNavigation = () => {
-    sectionLinks.forEach((section, index) => {
+    sectionsData.forEach((section, index) => {
         const className = index === 0 ? "active" : "";
         navLinksContainer.forEach((container) =>
             container.appendChild(getNavLinkStructure(section, className))
@@ -54,13 +54,13 @@ const highlightCurrentSection = () => {
     const scrollY = window.scrollY;
 
     sections.forEach((section) => {
-        const sectionId = section.id;
-        const sectionTop = section.offsetTop - 100;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        const isActive = scrollY > sectionTop && scrollY <= sectionBottom;
+        const id = section.id;
+        const top = section.offsetTop - 100;
+        const bottom = top + section.offsetHeight;
+        const isActive = scrollY > top && scrollY <= bottom;
 
         const navLinks = document.querySelectorAll(
-            `.nav-links a[href*="${sectionId}"]`
+            `.nav-links a[href*="${id}"]`
         );
 
         navLinks.forEach((link) => link.classList.toggle("active", isActive));

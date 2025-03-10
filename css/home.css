@@ -188,4 +188,9 @@
     #home .button-container {
         justify-content: flex-start;
     }
+
+    #home .button-container a .icon {
+        height: 24px;
+        width: 24px;
+    }
 }

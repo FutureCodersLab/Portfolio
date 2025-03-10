@@ -1,4 +1,4 @@
-import references from "../data-structures/references.js";
+import { references } from "../data-structures/references.js";
 import { scrollReveal } from "../utils.js";
 
 const referencesContainer = document.querySelector(".swiper-wrapper");

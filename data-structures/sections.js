@@ -1,4 +1,4 @@
-export default [
+export const sectionsData = [
     {
         id: "#home",
         name: "Home",
