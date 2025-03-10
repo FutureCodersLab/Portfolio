@@ -1,8 +1,8 @@
 export const projects = [
     {
-        name: "Peek A Boo",
+        name: "Gotham-Defender",
         description:
-            "Step into Peek a Boo, a Monsters, Inc.-themed web game where yo, Inc.-themed web game where yo",
+            "Challenge your reflexes with Gotham-Defender, the fast-paced game where you must click the Joker for points—but avoid hitting Batman!",
         websiteLink: "https://futurecoderslab.github.io/Gotham-Defender/",
         githubLink: "https://github.com/FutureCodersLab/Gotham-Defender",
         image: "./images/projects/gotham-defender.png",
@@ -12,7 +12,7 @@ export const projects = [
     {
         name: "Piano",
         description:
-            "Unleash your inner musician with Piano, a virtual piano created with HTML, CSS, and JavaScript. ",
+            "Showcase your inner musician with Piano, a virtual piano created with HTML, CSS, and JavaScript. ",
         websiteLink: "https://futurecoderslab.github.io/Piano/",
         githubLink: "https://github.com/FutureCodersLab/Piano",
         image: "./images/projects/piano.png",
