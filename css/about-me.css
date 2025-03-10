@@ -113,17 +113,8 @@
     z-index: -1;
 }
 
-#about-me .content .title-container {
-    position: relative;
-    width: max-content;
-}
-
-#about-me .content .title-container .double-line {
-    position: absolute;
-    bottom: -15px;
-    right: 0;
-    width: 170px;
-    height: 18px;
+#about-me .content p {
+    min-width: 360px;
 }
 
 @media (min-width: 768px) {
