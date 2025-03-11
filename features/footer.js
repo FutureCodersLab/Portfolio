@@ -24,8 +24,6 @@ const getSocialsStructure = (link) => {
     const a = document.createElement("a");
     a.target = "_blank";
     a.href = link.href;
-    a.innerHTML = `
-        <img src="${link.icon}" />
-    `;
+    a.innerHTML = `<img src="${link.icon}" />`;
     return a;
 };
