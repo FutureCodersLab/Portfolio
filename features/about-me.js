@@ -1,4 +1,4 @@
-import { scrollReveal } from "../utils.js";
+import { scrollReveal } from "../utils/utils.js";
 
 export const setupAboutMe = () => {
     animations();

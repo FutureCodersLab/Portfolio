@@ -1,4 +1,4 @@
-import { scrollReveal } from "../utils.js";
+import { scrollReveal } from "../utils/utils.js";
 
 const downloadResumeButton = document.querySelector("#home .download-resume");
 const buttonText = downloadResumeButton.querySelector(".text");

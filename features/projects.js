@@ -1,5 +1,5 @@
 import { projects } from "../data-structures/projects.js";
-import { getScreenSize, scrollReveal } from "../utils.js";
+import { getScreenSize, scrollReveal } from "../utils/utils.js";
 
 const projectsContainer = document.querySelector(".projects-container");
 const loadMoreButton = document.querySelector("#projects button");

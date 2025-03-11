@@ -1,5 +1,5 @@
 import { socialLinks } from "../data-structures/links.js";
-import { scrollReveal } from "../utils.js";
+import { scrollReveal } from "../utils/utils.js";
 
 const socialsContainer = document.querySelector("#contact-me .socials");
 const form = document.querySelector("#form");
