@@ -127,7 +127,7 @@
         width: min-content;
     }
 
-    #about-me .button-container {
+    #about-me .buttons-container {
         flex-direction: row;
     }
 }

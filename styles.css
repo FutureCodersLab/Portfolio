@@ -4,9 +4,9 @@
 @import url("./css/navigation.css");
 @import url("./css/home.css");
 @import url("./css/about-me.css");
+@import url("./css/references.css");
 @import url("./css/projects.css");
 @import url("./css/contact-me.css");
-@import url("./css/references.css");
 @import url("./css/footer.css");
 
 :root {
@@ -120,7 +120,7 @@ a {
     text-decoration: none;
 }
 
-.button-container {
+.buttons-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,7 +129,7 @@ a {
     width: 100%;
 }
 
-.button-container a,
+.buttons-container a,
 button {
     all: unset;
     width: 100%;
@@ -150,7 +150,7 @@ button {
     transition: 0.3s ease all;
 }
 
-.button-container a:hover,
+.buttons-container a:hover,
 button:hover {
     transform: translateY(-2px);
     background-color: var(--red);
@@ -236,11 +236,11 @@ button:hover {
         font-size: var(--font-size-xs);
     }
 
-    .button-container {
+    .buttons-container {
         flex-direction: row;
     }
 
-    .button-container a,
+    .buttons-container a,
     button {
         width: 300px;
         height: 50px;

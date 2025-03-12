@@ -100,7 +100,7 @@ const getProjectStructure = (project) => {
     const div = document.createElement("div");
     div.className = "project";
     div.innerHTML = `
-        <div class="image-container">
+        <div class="images-container">
             <img src="${image}" />
         </div>
         <div class="content">
