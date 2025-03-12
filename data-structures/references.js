@@ -1,6 +1,6 @@
 export const references = [
     {
-        image: "./images/me/naruto.webp",
+        image: "./images/references/naruto.webp",
         name: "Fernando Ordonez",
         position: "Founder",
         institution: "Future Coders Lab",
@@ -9,7 +9,7 @@ export const references = [
         recommendationLetter: "#",
     },
     {
-        image: "./images/me/naruto.webp",
+        image: "./images/references/naruto.webp",
         email: "fordonez792@gmail.com",
         name: "Fernando Ordonez",
         position: "Founder",
@@ -19,7 +19,7 @@ export const references = [
         recommendationLetter: "#",
     },
     {
-        image: "./images/me/naruto.webp",
+        image: "./images/references/naruto.webp",
         email: "fordonez792@gmail.com",
         name: "Fernando Ordonez",
         position: "Founder",
@@ -29,7 +29,7 @@ export const references = [
         recommendationLetter: "#",
     },
     {
-        image: "./images/me/naruto.webp",
+        image: "./images/references/naruto.webp",
         email: "fordonez792@gmail.com",
         name: "Fernando Ordonez",
         position: "Founder",

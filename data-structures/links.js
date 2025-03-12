@@ -1,18 +1,18 @@
 export const socialLinks = [
     {
-        href: "https://github.com/fordonez792",
+        href: "",
         icon: "./images/icons/socials/github-white.svg",
     },
     {
-        href: "https://linkedin.com/in/fernando-ordonez",
+        href: "",
         icon: "./images/icons/socials/linkedin.svg",
     },
     {
-        href: "https://www.facebook.com/fernando.ordonez.180",
+        href: "",
         icon: "./images/icons/socials/facebook.svg",
     },
     {
-        href: "https://www.instagram.com/fordonez792",
+        href: "",
         icon: "./images/icons/socials/instagram.svg",
     },
 ];
