@@ -1,0 +1,72 @@
+:root {
+    --black: #1d1616;
+    --yellow: #ffd166;
+    --background: #f5f0ef;
+
+    --title-font: "Montserrat";
+    --text-font: "Roboto Slab";
+
+    --font-size-xs: 18.66px;
+    --font-size-xxs: 14px;
+
+    --shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12),
+        0px 12px 42px -4px rgba(24, 39, 75, 0.12);
+
+    --circle: url(../images/doodles/circle.png) no-repeat center/contain;
+}
+
+@media (min-width: 768px) {
+    #projects {
+        gap: 60px;
+    }
+
+    #projects .header {
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #projects .projects-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #projects .project {
+        width: 326px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #projects .header {
+        width: calc(350px * 3 + 32px * 2);
+    }
+
+    #projects h2::before {
+        top: -20px;
+        width: calc(100px * 1.5);
+        height: calc(80px * 1.5);
+    }
+
+    #projects .filter-container {
+        gap: 24px;
+    }
+
+    #projects .filter-container span {
+        font-size: var(--font-size-xs);
+    }
+
+    #projects .filter-container select {
+        padding: 16px 24px;
+        font-size: var(--font-size-xs);
+        font-weight: 600;
+    }
+
+    #projects .project {
+        width: 350px;
+        height: 480px;
+    }
+
+    #projects .project .content .info p {
+        font-size: var(--font-size-xxs);
+    }
+}

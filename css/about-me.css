@@ -1,0 +1,106 @@
+:root {
+    --highlight: url(../images/doodles/highlight.png) no-repeat center/contain;
+    --squiggly-line: url(../images/doodles/squiggly-line.png) no-repeat
+        center/contain;
+    --double-line: url(../images/doodles/double-line.png) no-repeat
+        center/contain;
+}
+
+@media (min-width: 768px) {
+    #about-me .container {
+        flex-direction: row;
+        gap: 52px;
+    }
+
+    #about-me .content {
+        width: min-content;
+    }
+
+    #about-me .buttons-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px) {
+    #about-me .container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #about-me .images-container {
+        height: calc(250px * 2);
+        width: calc(300px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(1) {
+        bottom: calc(25px * 2);
+        left: calc(25px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(1) .picture {
+        width: calc(93px * 2);
+        height: calc(93px * 2);
+        border-radius: 32px;
+    }
+
+    #about-me .images-container .image:nth-child(1)::before {
+        bottom: calc(-15px * 2);
+        left: calc(-15px * 2);
+        width: calc(20px * 2);
+        height: calc(23px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(2) {
+        top: 0;
+        left: calc(10px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(2) .picture {
+        width: calc(110px * 2);
+        height: calc(110px * 2);
+        border-radius: 36px;
+    }
+
+    #about-me .images-container .image:nth-child(2)::before {
+        top: calc(-15px * 2);
+        left: calc(-15px * 2);
+        width: calc(20px * 2);
+        height: calc(23px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(3) {
+        top: calc(10px * 2);
+        right: calc(15px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(3) .picture {
+        width: calc(146px * 2);
+        height: calc(146px * 2);
+        border-radius: 40px;
+        object-fit: cover;
+    }
+
+    #about-me .images-container .image:nth-child(3)::before {
+        top: calc(-15px * 2);
+        right: calc(-15px * 2);
+        width: calc(20px * 2);
+        height: calc(23px * 2);
+    }
+
+    #about-me .images-container .image:nth-child(3)::after {
+        bottom: calc(-70px * 2);
+        width: calc(125px * 2);
+        height: calc(55px * 2);
+    }
+
+    #about-me .content {
+        gap: 48px;
+    }
+
+    #about-me .content h2::before {
+        bottom: -25px;
+        right: -20px;
+        width: calc(193px * 1.75);
+        height: calc(18px * 1.75);
+    }
+}
