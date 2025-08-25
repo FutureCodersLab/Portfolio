@@ -1,10 +1,102 @@
-:root {
-    --red: #ef476f;
-    --gray-blue: #839da5;
-    --dark-blue: #073b4c;
-    --background: #f5f0ef;
+#contact-me {
+    background-color: var(--background);
+}
 
-    --wavy-line: url(../images/doodles/wavy-line.png) no-repeat center/contain;
+#contact-me .background-wave {
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate(90deg);
+}
+
+#contact-me h2 {
+    width: auto;
+}
+
+#contact-me h2::before {
+    content: "";
+    background: var(--wavy-line);
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 14px;
+}
+
+#contact-me .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#contact-me .content form,
+#contact-me .content form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+#contact-me .content form input,
+#contact-me .content form textarea {
+    all: unset;
+    padding: 12px 20px;
+    width: calc(100% - 40px);
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid var(--dark-blue);
+}
+
+#contact-me .content form textarea {
+    min-height: 200px;
+}
+
+#contact-me .content form input::placeholder,
+#contact-me .content form textarea::placeholder {
+    color: var(--gray-blue);
+}
+
+#contact-me .content .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#contact-me .content .info .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#contact-me .content .info .socials a {
+    background-color: var(--dark-blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease all;
+}
+
+#contact-me .content .info .socials a:hover {
+    background-color: var(--red);
+    transform: scale(1.1);
+}
+
+#contact-me .content .info .socials a img {
+    width: 21px;
+    height: 21px;
 }
 
 @media (min-width: 768px) {
