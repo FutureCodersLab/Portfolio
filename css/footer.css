@@ -1,3 +1,15 @@
+:root {
+    --white: #ffffff;
+    --gray: #d9d9d9;
+    --dark-blue: #073b4c;
+    --red: #ef476f;
+
+    --title-font: "Montserrat";
+
+    --font-size-xs: 18.66px;
+    --font-size-xxs: 14px;
+}
+
 footer {
     display: flex;
     justify-content: center;

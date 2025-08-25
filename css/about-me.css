@@ -1,3 +1,11 @@
+:root {
+    --highlight: url(../images/doodles/highlight.png) no-repeat center/contain;
+    --squiggly-line: url(../images/doodles/squiggly-line.png) no-repeat
+        center/contain;
+    --double-line: url(../images/doodles/double-line.png) no-repeat
+        center/contain;
+}
+
 #about-me .container {
     display: flex;
     justify-content: center;

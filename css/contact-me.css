@@ -1,3 +1,12 @@
+:root {
+    --red: #ef476f;
+    --gray-blue: #839da5;
+    --dark-blue: #073b4c;
+    --background: #f5f0ef;
+
+    --wavy-line: url(../images/doodles/wavy-line.png) no-repeat center/contain;
+}
+
 #contact-me {
     background-color: var(--background);
 }
