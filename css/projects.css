@@ -207,6 +207,7 @@
 
 #projects button {
     display: none;
+    max-width: 326px;
 }
 
 #projects button.active {
