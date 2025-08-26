@@ -7,7 +7,7 @@ export const setupHome = () => {
 };
 
 const downloadResume = () => {
-    downloadResumeButton.disabled = true;
+    downloadResumeButton.style.pointerEvents = "none";
 
     downloadResumeButton.classList.add("complete");
 
@@ -20,6 +20,6 @@ const downloadResume = () => {
         downloadResumeButton.classList.remove("complete");
         buttonIcon.src = originalIcon;
         buttonText.textContent = "Resume";
-        downloadResumeButton.disabled = false;
+        downloadResumeButton.style.pointerEvents = "all";
     }, 3000);
 };
