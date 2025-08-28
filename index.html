@@ -4,6 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></script>
+
         <link rel="stylesheet" href="./styles.css" />
         <script type="module" src="./script.js" defer></script>
     </head>
@@ -95,6 +107,72 @@
                     >
                     <a href="" target="_blank">Find Me On LinkedIn</a>
                     <a href="#contact-me">Drop Me A Message</a>
+                </div>
+            </section>
+
+            <section id="references">
+                <div class="background-wave-container">
+                    <img
+                        src="./images/doodles/background-wave-2.svg"
+                        class="background-wave"
+                    />
+                </div>
+                <h2>What Others Say</h2>
+                <div class="swiper">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section id="contact-me">
+                <img
+                    src="./images/doodles/background-wave-3.svg"
+                    class="background-wave"
+                />
+                <h2>Drop Me A Message</h2>
+                <div class="content">
+                    <form id="form">
+                        <div>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="First Name"
+                                required
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email Address"
+                                required`
+                            />
+                        </div>
+                        <input
+                            type="text"
+                            name="subject"
+                            placeholder="Subject"
+                            required
+                        />
+                        <textarea
+                            name="message"
+                            placeholder="Message"
+                            required
+                        ></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="info">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Velit, accusantium aliquam esse eos, sit,
+                            veniam adipisci maiores nesciunt nobis officiis
+                            molestiae ullam tempore? Reprehenderit voluptas
+                            recusandae ipsa consequuntur unde voluptatem.
+                            <br /><br />
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Adipisci tempora, non maxime aperiam excepturi
+                            incidunt.
+                        </p>
+                        <div class="socials"></div>
+                    </div>
                 </div>
             </section>
         </main>
