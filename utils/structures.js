@@ -45,3 +45,59 @@ export const getSocialsLinkStructure = (link) => {
     `;
     return a;
 };
+
+export const getProjectStructure = (project) => {
+    const { image, name, description, websiteLink, githubLink, skills } =
+        project;
+
+    const skillIcons = skills
+        .map((skill) => `<img src="./images/icons/skills/${skill}.svg" />`)
+        .join("");
+
+    const div = document.createElement("div");
+    div.className = "project";
+    div.innerHTML = `
+        <div class="images-container">
+            <img src="${image}" />
+        </div>
+        <div class="content">
+            <div class="info">
+                <h3>${name}</h3>
+                <p>${description}</p>
+            </div>
+            <div class="skills-container">
+                <span>Skills:</span>
+                <div class="skills">
+                    ${skillIcons}
+                </div>
+            </div>
+            <div class="links">
+                <div class="code">
+                    <img
+                        src="./images/icons/socials/github-black.svg"
+                    />
+                    <a href="${websiteLink}" target="_blank">View Code</a>
+                </div>
+                <div class="website">
+                    <a href="${githubLink}" target="_blank">Try It Out</a>
+                    <img src="./images/icons/arrow.svg" />
+                </div>
+            </div>
+        </div>
+    `;
+
+    div.addEventListener("click", (e) => {
+        if (!e.target.closest("a")) {
+            window.open(websiteLink, "_blank");
+        }
+    });
+
+    return div;
+};
+
+export const getOptionStructure = (category) => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    return option;
+};
