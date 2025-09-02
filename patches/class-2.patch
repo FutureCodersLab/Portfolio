@@ -1,0 +1,249 @@
+diff --git a/features/contact-me.js b/features/contact-me.js
+new file mode 100644
+index 0000000..64c4c46
+--- /dev/null
++++ b/features/contact-me.js
+@@ -0,0 +1,38 @@
++import { socialLinks } from "../data-structures/links-data.js";
++import { getSocialsLinkStructure } from "../utils/structures.js";
++
++const socialsContainer = document.querySelector("#contact-me .socials");
++const form = document.querySelector("#form");
++const submitButton = document.querySelector("#contact-me button");
++
++export const setupContactMe = () => {
++    socialLinks.map((link) => {
++        const socialsLink = getSocialsLinkStructure(link);
++        socialsContainer.appendChild(socialsLink);
++    });
++
++    form.addEventListener("submit", sendEmail);
++};
++
++const sendEmail = async (e) => {
++    e.preventDefault();
++
++    submitButton.disabled = true;
++    submitButton.textContent = "Sending...";
++
++    try {
++        await emailjs.sendForm(
++            "service_o6gvq8i", // serviceId
++            "template_q846iqg", // templateId
++            "#form", // formId
++            "7Qh49BigECmhkUjWL" // publicKey
++        );
++        alert("Message sent successfully");
++    } catch (error) {
++        alert("Message not sent (service error)");
++    } finally {
++        submitButton.disabled = false;
++        submitButton.textContent = "Send Message";
++        form.reset();
++    }
++};
+diff --git a/features/references.js b/features/references.js
+new file mode 100644
+index 0000000..495a931
+--- /dev/null
++++ b/features/references.js
+@@ -0,0 +1,36 @@
++import { references } from "../data-structures/references-data.js";
++import { getSwiperSlideStructure } from "../utils/structures.js";
++
++const referencesContainer = document.querySelector(".swiper-wrapper");
++
++export const setupReferences = () => {
++    references.map((reference) => {
++        const swiperSlide = getSwiperSlideStructure(reference);
++        referencesContainer.appendChild(swiperSlide);
++    });
++
++    setupSwiper();
++};
++
++const setupSwiper = () => {
++    new Swiper(".swiper", {
++        loop: true,
++        spaceBetween: 30,
++        autoplay: {
++            delay: 10000,
++        },
++        centeredSlides: true,
++        pagination: {
++            el: ".swiper-pagination",
++            clickable: true,
++        },
++        breakpoints: {
++            768: {
++                slidesPerView: 2,
++            },
++            1200: {
++                slidesPerView: 2.5,
++            },
++        },
++    });
++};
+diff --git a/index.html b/index.html
+index e7c8573..ef75793 100644
+--- a/index.html
++++ b/index.html
+@@ -4,6 +4,18 @@
+         <meta charset="UTF-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>Portfolio</title>
++
++        <link
++            rel="stylesheet"
++            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
++        />
++
++        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
++        <script
++            type="text/javascript"
++            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
++        ></script>
++
+         <link rel="stylesheet" href="./styles.css" />
+         <script type="module" src="./script.js" defer></script>
+     </head>
+@@ -97,6 +109,72 @@
+                     <a href="#contact-me">Drop Me A Message</a>
+                 </div>
+             </section>
++
++            <section id="references">
++                <div class="background-wave-container">
++                    <img
++                        src="./images/doodles/background-wave-2.svg"
++                        class="background-wave"
++                    />
++                </div>
++                <h2>What Others Say</h2>
++                <div class="swiper">
++                    <div class="swiper-wrapper"></div>
++                    <div class="swiper-pagination"></div>
++                </div>
++            </section>
++
++            <section id="contact-me">
++                <img
++                    src="./images/doodles/background-wave-3.svg"
++                    class="background-wave"
++                />
++                <h2>Drop Me A Message</h2>
++                <div class="content">
++                    <form id="form">
++                        <div>
++                            <input
++                                type="text"
++                                name="name"
++                                placeholder="First Name"
++                                required
++                            />
++                            <input
++                                type="email"
++                                name="email"
++                                placeholder="Email Address"
++                                required`
++                            />
++                        </div>
++                        <input
++                            type="text"
++                            name="subject"
++                            placeholder="Subject"
++                            required
++                        />
++                        <textarea
++                            name="message"
++                            placeholder="Message"
++                            required
++                        ></textarea>
++                        <button type="submit">Send Message</button>
++                    </form>
++                    <div class="info">
++                        <p>
++                            Lorem ipsum dolor, sit amet consectetur adipisicing
++                            elit. Velit, accusantium aliquam esse eos, sit,
++                            veniam adipisci maiores nesciunt nobis officiis
++                            molestiae ullam tempore? Reprehenderit voluptas
++                            recusandae ipsa consequuntur unde voluptatem.
++                            <br /><br />
++                            Lorem ipsum, dolor sit amet consectetur adipisicing
++                            elit. Adipisci tempora, non maxime aperiam excepturi
++                            incidunt.
++                        </p>
++                        <div class="socials"></div>
++                    </div>
++                </div>
++            </section>
+         </main>
+     </body>
+ </html>
+diff --git a/script.js b/script.js
+index f15465d..df9ca9e 100644
+--- a/script.js
++++ b/script.js
+@@ -1,5 +1,9 @@
++import { setupContactMe } from "./features/contact-me.js";
+ import { setupHome } from "./features/home.js";
++import { setupReferences } from "./features/references.js";
+ 
+ document.addEventListener("DOMContentLoaded", () => {
+     setupHome();
++    setupReferences();
++    setupContactMe();
+ });
+diff --git a/utils/structures.js b/utils/structures.js
+new file mode 100644
+index 0000000..9dbfd84
+--- /dev/null
++++ b/utils/structures.js
+@@ -0,0 +1,47 @@
++export const getSwiperSlideStructure = (reference) => {
++    const {
++        name,
++        image,
++        position,
++        institution,
++        content,
++        recommendationLetter,
++    } = reference;
++
++    const div = document.createElement("div");
++    div.className = "swiper-slide";
++    div.innerHTML = `
++        <div class="content">
++            <div class="header">
++                <img src="${image}" />
++                <div class="author-info">
++                    <span class="name">${name}</span>
++                    <span class="info"
++                        >${position}, ${institution}</span
++                    >
++                </div>
++            </div>
++            <div class="reference">
++                <p>${content}</p>
++                <a href="${recommendationLetter}" download>Read More</a>
++            </div>
++        </div>
++        <img
++            src="./images/icons/quotes.png"
++            class="quotes"
++        />
++        <div class="line-decoration"></div>
++    `;
++
++    return div;
++};
++
++export const getSocialsLinkStructure = (link) => {
++    const a = document.createElement("a");
++    a.href = link.href;
++    a.target = "_blank";
++    a.innerHTML = `
++        <img src="${link.icon}" />
++    `;
++    return a;
++};
