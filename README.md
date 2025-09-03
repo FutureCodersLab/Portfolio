@@ -40,4 +40,4 @@ git add .
 git commit -m "applied class 2 patch"
 git push
 ```
-Now you’re ready for the next class 🚀
+Now you’re ready for the next class 🎉
