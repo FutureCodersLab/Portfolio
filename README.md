@@ -4,7 +4,7 @@ If you miss a class, you can apply a patch to make your code up to date.
 
 ---
 
-### 🛠 Step 1. Save your progress
+### ✅ Step 1. Save your progress
 Make sure your own changes are pushed to GitHub:
 
 ```bash
@@ -13,7 +13,7 @@ git commit -m "my work so far"
 git push
 ```
 
-### 🛠 Step 2. Download the patch file
+### 📥 Step 2. Download the patch file
 
 1. Go to https://github.com/ThinkingTechDev/Portfolio/tree/patches
 2. Click on the patch file you need (for example: if you missed the 2nd class then click on `class-2.patch`)
@@ -31,7 +31,7 @@ git apply class-2.patch
 ```
 Replace class-2.patch with the name of the file you downloaded
 
-### Step 4. Push the updated code
+### 🚀 Step 4. Push the updated code
 
 In your terminal, inside the project folder, run:
 
