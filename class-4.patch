@@ -1,0 +1,392 @@
+diff --git a/features/about-me.js b/features/about-me.js
+new file mode 100644
+index 0000000..1e8ee18
+--- /dev/null
++++ b/features/about-me.js
+@@ -0,0 +1,17 @@
++import { scrollReveal } from "../utils/scroll-reveal.js";
++
++export const setupAboutMe = () => {
++    animations();
++};
++
++const animations = () => {
++    scrollReveal.reveal("#about-me .images-container .image", {
++        origin: "left",
++        interval: 200,
++    });
++
++    scrollReveal.reveal("#about-me .content", {
++        origin: "right",
++        delay: 400,
++    });
++};
+diff --git a/features/contact-me.js b/features/contact-me.js
+index 64c4c46..47a1c62 100644
+--- a/features/contact-me.js
++++ b/features/contact-me.js
+@@ -1,4 +1,5 @@
+ import { socialLinks } from "../data-structures/links-data.js";
++import { scrollReveal } from "../utils/scroll-reveal.js";
+ import { getSocialsLinkStructure } from "../utils/structures.js";
+ 
+ const socialsContainer = document.querySelector("#contact-me .socials");
+@@ -12,6 +13,7 @@ export const setupContactMe = () => {
+     });
+ 
+     form.addEventListener("submit", sendEmail);
++    animations();
+ };
+ 
+ const sendEmail = async (e) => {
+@@ -36,3 +38,20 @@ const sendEmail = async (e) => {
+         form.reset();
+     }
+ };
++
++const animations = () => {
++    scrollReveal.reveal("#contact-me h2", {
++        origin: "top",
++        delay: 300,
++    });
++
++    scrollReveal.reveal("#contact-me .content form", {
++        origin: "left",
++        delay: 400,
++    });
++
++    scrollReveal.reveal("#contact-me .content .info", {
++        origin: "right",
++        delay: 400,
++    });
++};
+diff --git a/features/footer.js b/features/footer.js
+new file mode 100644
+index 0000000..40339e0
+--- /dev/null
++++ b/features/footer.js
+@@ -0,0 +1,21 @@
++import { socialLinks } from "../data-structures/links-data.js";
++import { sectionsData } from "../data-structures/sections-data.js";
++import {
++    getNavLinkStructure,
++    getSocialsLinkStructure,
++} from "../utils/structures.js";
++
++const footerLinks = document.querySelector("footer .links");
++const socialsContainer = document.querySelector("footer .socials");
++
++export const setupFooter = () => {
++    sectionsData.map((section) => {
++        const navLink = getNavLinkStructure(section);
++        footerLinks.appendChild(navLink);
++    });
++
++    socialLinks.forEach((link) => {
++        const socialsLink = getSocialsLinkStructure(link);
++        socialsContainer.appendChild(socialsLink);
++    });
++};
+diff --git a/features/home.js b/features/home.js
+index c0cedec..3e954b8 100644
+--- a/features/home.js
++++ b/features/home.js
+@@ -1,9 +1,12 @@
++import { scrollReveal } from "../utils/scroll-reveal.js";
++
+ const downloadResumeButton = document.querySelector("#home .download-resume");
+ const buttonText = downloadResumeButton.querySelector(".text");
+ const buttonIcon = downloadResumeButton.querySelector(".icon");
+ 
+ export const setupHome = () => {
+     downloadResumeButton.addEventListener("click", downloadResume);
++    animations();
+ };
+ 
+ const downloadResume = () => {
+@@ -23,3 +26,23 @@ const downloadResume = () => {
+         downloadResumeButton.style.pointerEvents = "all";
+     }, 3000);
+ };
++
++const animations = () => {
++    scrollReveal.reveal(
++        ".menu, .navigation, .logo, #home .nav-links, .open-menu",
++        {
++            origin: "top",
++            delay: 200,
++        }
++    );
++
++    scrollReveal.reveal(".images-container", {
++        origin: "right",
++        delay: 300,
++    });
++
++    scrollReveal.reveal(".content h1, .content h4, .buttons-container", {
++        origin: "left",
++        delay: 400,
++    });
++};
+diff --git a/features/navigation.js b/features/navigation.js
+new file mode 100644
+index 0000000..96ea3c3
+--- /dev/null
++++ b/features/navigation.js
+@@ -0,0 +1,67 @@
++import { sectionsData } from "../data-structures/sections-data.js";
++import { getNavLinkStructure } from "../utils/structures.js";
++
++const menu = document.querySelector(".menu");
++const openMenuButtons = document.querySelectorAll(".open-menu");
++const closeMenuButton = document.querySelector(".close-menu");
++const navLinksContainers = document.querySelectorAll(".nav-links");
++const nav = document.querySelector("nav");
++const homeNavigation = document.querySelector("#home .navigation");
++const scrollUp = document.querySelector(".scroll-up");
++const sections = document.querySelectorAll("section");
++
++export const setupNavigation = () => {
++    openMenuButtons.forEach((button) =>
++        button.addEventListener("click", () => {
++            menu.classList.add("active");
++        })
++    );
++
++    closeMenuButton.addEventListener("click", () => {
++        menu.classList.remove("active");
++    });
++
++    navLinksContainers.forEach((container) =>
++        sectionsData.forEach((section, index) => {
++            const className = index === 0 ? "active" : "";
++            const linkStructure = getNavLinkStructure(section, className);
++            container.appendChild(linkStructure);
++        })
++    );
++
++    window.addEventListener("scroll", () => {
++        revealNavbar();
++        revealScrollUp();
++        highlightCurrentSection();
++    });
++};
++
++const revealNavbar = () => {
++    const { bottom } = homeNavigation.getBoundingClientRect();
++
++    const isNavbarActive = bottom < 0;
++    nav.classList.toggle("active", isNavbarActive);
++};
++
++const revealScrollUp = () => {
++    const isScrollUpActive = window.scrollY > 350;
++    scrollUp.classList.toggle("active", isScrollUpActive);
++};
++
++const highlightCurrentSection = () => {
++    sections.forEach((section) => {
++        const id = section.id;
++
++        const { top, bottom } = section.getBoundingClientRect();
++        const midpoint = window.innerHeight / 2;
++        const isActive = midpoint > top && midpoint <= bottom;
++
++        const navLinks = document.querySelectorAll(
++            `.nav-links a[href*="${id}"]`
++        );
++
++        navLinks.forEach((link) => {
++            link.classList.toggle("active", isActive);
++        });
++    });
++};
+diff --git a/features/projects.js b/features/projects.js
+index 7486588..2137efc 100644
+--- a/features/projects.js
++++ b/features/projects.js
+@@ -1,5 +1,6 @@
+ import { projects } from "../data-structures/projects-data.js";
+ import { getScreenSize } from "../utils/screen-size.js";
++import { scrollReveal } from "../utils/scroll-reveal.js";
+ import {
+     getOptionStructure,
+     getProjectStructure,
+@@ -22,6 +23,7 @@ export const setupProjects = () => {
+     loadMoreProjectsButton.addEventListener("click", loadMoreProjects);
+     select.addEventListener("change", filterProjects);
+     window.addEventListener("resize", resize);
++    animations();
+ };
+ 
+ const loadMoreProjects = () => {
+@@ -116,3 +118,15 @@ function getProjectsToLoadCount() {
+ 
+     return 1;
+ }
++
++const animations = () => {
++    scrollReveal.reveal("#projects .header", {
++        origin: "top",
++        delay: 300,
++    });
++
++    scrollReveal.reveal(".projects-container", {
++        origin: "bottom",
++        delay: 400,
++    });
++};
+diff --git a/features/references.js b/features/references.js
+index 495a931..05bdd8a 100644
+--- a/features/references.js
++++ b/features/references.js
+@@ -1,4 +1,5 @@
+ import { references } from "../data-structures/references-data.js";
++import { scrollReveal } from "../utils/scroll-reveal.js";
+ import { getSwiperSlideStructure } from "../utils/structures.js";
+ 
+ const referencesContainer = document.querySelector(".swiper-wrapper");
+@@ -10,6 +11,7 @@ export const setupReferences = () => {
+     });
+ 
+     setupSwiper();
++    animations();
+ };
+ 
+ const setupSwiper = () => {
+@@ -34,3 +36,15 @@ const setupSwiper = () => {
+         },
+     });
+ };
++
++const animations = () => {
++    scrollReveal.reveal("#references h2", {
++        origin: "top",
++        delay: 300,
++    });
++
++    scrollReveal.reveal(".swiper", {
++        origin: "bottom",
++        delay: 400,
++    });
++};
+diff --git a/index.html b/index.html
+index 022fda7..34ce869 100644
+--- a/index.html
++++ b/index.html
+@@ -15,18 +15,46 @@
+             type="text/javascript"
+             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+         ></script>
++        <script src="https://unpkg.com/scrollreveal"></script>
+ 
+         <link rel="stylesheet" href="./styles.css" />
+         <script type="module" src="./script.js" defer></script>
+     </head>
+     <body>
++        <div class="menu">
++            <span>Menu</span>
++
++            <h3 class="name">Fernando</h3>
++
++            <div class="nav-links"></div>
++
++            <img src="./images/icons/close.svg" class="close-menu" />
++        </div>
++        <nav>
++            <a href="#" class="logo">
++                <span class="circle">F</span>
++                <span class="name">Fernando Ordoñez</span>
++            </a>
++
++            <div class="nav-links"></div>
++
++            <img src="./images/icons/open-menu.svg" class="open-menu" />
++        </nav>
+         <main>
+             <section id="home">
+                 <img
+                     src="./images/doodles/background-wave-1.svg"
+                     class="background-wave"
+                 />
+-                <div class="navigation"></div>
++                <div class="navigation">
++                    <a href="#" class="logo">
++                        <span class="circle">F</span>
++                        <span class="name">Fernando Ordoñez</span>
++                    </a>
++                    <div class="nav-links"></div>
++
++                    <img src="./images/icons/open-menu.svg" class="open-menu" />
++                </div>
+                 <div class="container">
+                     <div class="images-container">
+                         <img src="./images/doodles/blob.png" class="blob" />
+@@ -188,5 +216,20 @@
+                 </div>
+             </section>
+         </main>
++
++        <footer>
++            <div class="links"></div>
++
++            <div class="socials"></div>
++
++            <span class="copyright">
++                &#169; All Rights Reserved By
++                <a href="#">Thinking Tech</a>
++            </span>
++        </footer>
++
++        <a href="#" class="scroll-up">
++            <img src="./images/icons/scroll-up.svg" />
++        </a>
+     </body>
+ </html>
+diff --git a/script.js b/script.js
+index 4e018da..cc38880 100644
+--- a/script.js
++++ b/script.js
+@@ -2,10 +2,16 @@ import { setupContactMe } from "./features/contact-me.js";
+ import { setupHome } from "./features/home.js";
+ import { setupProjects } from "./features/projects.js";
+ import { setupReferences } from "./features/references.js";
++import { setupNavigation } from "./features/navigation.js";
++import { setupFooter } from "./features/footer.js";
++import { setupAboutMe } from "./features/about-me.js";
+ 
+ document.addEventListener("DOMContentLoaded", () => {
+     setupHome();
++    setupAboutMe();
+     setupReferences();
+     setupProjects();
+     setupContactMe();
++    setupNavigation();
++    setupFooter();
+ });
+diff --git a/utils/scroll-reveal.js b/utils/scroll-reveal.js
+new file mode 100644
+index 0000000..ec5fae6
+--- /dev/null
++++ b/utils/scroll-reveal.js
+@@ -0,0 +1,4 @@
++export const scrollReveal = ScrollReveal({
++    distance: "60px",
++    duration: 1000,
++});
+diff --git a/utils/structures.js b/utils/structures.js
+index 6bb706b..4c1424c 100644
+--- a/utils/structures.js
++++ b/utils/structures.js
+@@ -101,3 +101,11 @@ export const getOptionStructure = (category) => {
+     option.textContent = category;
+     return option;
+ };
++
++export const getNavLinkStructure = (section, className) => {
++    const a = document.createElement("a");
++    a.href = section.id;
++    a.textContent = section.name;
++    a.className = className;
++    return a;
++};
