@@ -1,0 +1,52 @@
+// about-me.js
+
+scrollReveal.reveal("#about-me .images-container .image", {
+  origin: "left",
+  interval: 200,
+});
+
+scrollReveal.reveal("#about-me .content", {
+  origin: "right",
+  delay: 400,
+});
+
+// references.js
+
+scrollReveal.reveal("#references h2", {
+  origin: "top",
+  delay: 300,
+});
+
+scrollReveal.reveal(".swiper", {
+  origin: "bottom",
+  delay: 400,
+});
+
+// projects.js
+
+scrollReveal.reveal("#projects .header", {
+  origin: "top",
+  delay: 300,
+});
+
+scrollReveal.reveal(".projects-container", {
+  origin: "bottom",
+  delay: 400,
+});
+
+// contact-me.js
+
+scrollReveal.reveal("#contact-me h2", {
+  origin: "top",
+  delay: 300,
+});
+
+scrollReveal.reveal("#contact-me .content form", {
+  origin: "left",
+  delay: 400,
+});
+
+scrollReveal.reveal("#contact-me .content .info", {
+  origin: "right",
+  delay: 400,
+});
