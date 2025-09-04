@@ -1,5 +1,6 @@
 import { projects } from "../data-structures/projects-data.js";
 import { getScreenSize } from "../utils/screen-size.js";
+import { scrollReveal } from "../utils/scroll-reveal.js";
 import {
     getOptionStructure,
     getProjectStructure,
@@ -22,6 +23,7 @@ export const setupProjects = () => {
     loadMoreProjectsButton.addEventListener("click", loadMoreProjects);
     select.addEventListener("change", filterProjects);
     window.addEventListener("resize", resize);
+    animations();
 };
 
 const loadMoreProjects = () => {
@@ -116,3 +118,15 @@ function getProjectsToLoadCount() {
 
     return 1;
 }
+
+const animations = () => {
+    scrollReveal.reveal("#projects .header", {
+        origin: "top",
+        delay: 300,
+    });
+
+    scrollReveal.reveal(".projects-container", {
+        origin: "bottom",
+        delay: 400,
+    });
+};

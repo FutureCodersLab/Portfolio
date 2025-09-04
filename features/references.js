@@ -1,4 +1,5 @@
 import { references } from "../data-structures/references-data.js";
+import { scrollReveal } from "../utils/scroll-reveal.js";
 import { getSwiperSlideStructure } from "../utils/structures.js";
 
 const referencesContainer = document.querySelector(".swiper-wrapper");
@@ -10,6 +11,7 @@ export const setupReferences = () => {
     });
 
     setupSwiper();
+    animations();
 };
 
 const setupSwiper = () => {
@@ -32,5 +34,17 @@ const setupSwiper = () => {
                 slidesPerView: 2.5,
             },
         },
+    });
+};
+
+const animations = () => {
+    scrollReveal.reveal("#references h2", {
+        origin: "top",
+        delay: 300,
+    });
+
+    scrollReveal.reveal(".swiper", {
+        origin: "bottom",
+        delay: 400,
     });
 };

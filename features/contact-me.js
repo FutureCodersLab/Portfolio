@@ -1,4 +1,5 @@
 import { socialLinks } from "../data-structures/links-data.js";
+import { scrollReveal } from "../utils/scroll-reveal.js";
 import { getSocialsLinkStructure } from "../utils/structures.js";
 
 const socialsContainer = document.querySelector("#contact-me .socials");
@@ -12,6 +13,7 @@ export const setupContactMe = () => {
     });
 
     form.addEventListener("submit", sendEmail);
+    animations();
 };
 
 const sendEmail = async (e) => {
@@ -35,4 +37,21 @@ const sendEmail = async (e) => {
         submitButton.textContent = "Send Message";
         form.reset();
     }
+};
+
+const animations = () => {
+    scrollReveal.reveal("#contact-me h2", {
+        origin: "top",
+        delay: 300,
+    });
+
+    scrollReveal.reveal("#contact-me .content form", {
+        origin: "left",
+        delay: 400,
+    });
+
+    scrollReveal.reveal("#contact-me .content .info", {
+        origin: "right",
+        delay: 400,
+    });
 };
