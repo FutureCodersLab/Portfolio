@@ -123,47 +123,10 @@ index 0000000..7486588
 +    return 1;
 +}
 diff --git a/index.html b/index.html
-index ef75793..2838a71 100644
+index ef75793..022fda7 100644
 --- a/index.html
 +++ b/index.html
-@@ -30,7 +30,10 @@
-                 <div class="container">
-                     <div class="images-container">
-                         <img src="./images/doodles/blob.png" class="blob" />
--                        <img src="./images/me/image1.jpg" class="blob-image" />
-+                        <img
-+                            src="./images/me/graduation.jpg"
-+                            class="blob-image"
-+                        />
-                     </div>
-                     <div class="content">
-                         <h1>Hey Friends!</h1>
-@@ -67,15 +70,21 @@
-                 <div class="container">
-                     <div class="images-container">
-                         <div class="image">
--                            <img src="./images/me/image2.jpg" class="picture" />
-+                            <img src="./images/me/gown.jpg" class="picture" />
-                         </div>
- 
-                         <div class="image">
--                            <img src="./images/me/image3.jpg" class="picture" />
-+                            <img
-+                                src="./images/me/thailand.jpg"
-+                                class="picture"
-+                            />
-                         </div>
- 
-                         <div class="image">
--                            <img src="./images/me/image4.jpg" class="picture" />
-+                            <img
-+                                src="./images/me/vietnam.jpg"
-+                                class="picture"
-+                            />
-                         </div>
-                     </div>
-                     <div class="content">
-@@ -124,6 +133,18 @@
+@@ -124,6 +124,18 @@
                  </div>
              </section>
  
