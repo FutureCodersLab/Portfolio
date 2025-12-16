@@ -10,7 +10,7 @@ export const references = [
     },
     {
         image: "./images/references/gyomei.jpg",
-        email: "fordonez792@gmail.com",
+        email: "gyomei@gmail.com",
         name: "Gyomei Himejima",
         position: "Stone Hashira",
         institution: "Demon Slayer Corps",
@@ -20,7 +20,7 @@ export const references = [
     },
     {
         image: "./images/references/gyomei.jpg",
-        email: "fordonez792@gmail.com",
+        email: "gyomei@gmail.com",
         name: "Gyomei Himejima",
         position: "Stone Hashira",
         institution: "Demon Slayer Corps",
@@ -30,7 +30,7 @@ export const references = [
     },
     {
         image: "./images/references/gyomei.jpg",
-        email: "fordonez792@gmail.com",
+        email: "gyomei@gmail.com",
         name: "Gyomei Himejima",
         position: "Stone Hashira",
         institution: "Demon Slayer Corps",
