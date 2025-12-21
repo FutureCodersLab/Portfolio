@@ -27,7 +27,7 @@ const sendEmail = async (e) => {
             "service_o6gvq8i", // serviceId
             "template_q846iqg", // templateId
             "#form", // formId
-            "7Qh49BigECmhkUjWL" // publicKey
+            "7ZuH8nBKqhIIJAhQ4" // publicKey
         );
         alert("Message sent successfully");
     } catch (error) {
